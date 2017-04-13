@@ -11,6 +11,10 @@ import (
 	"github.com/antchfx/xquery/xml"
 )
 
+/*
+RSS and Atom Compared: https://www.intertwingly.net/wiki/pie/Rss20AndAtom10Compared
+*/
+
 var DefaultHandler = HandlerFunc(func(r io.Reader) (*Feed, error) {
 	return parse(r)
 })
@@ -151,6 +155,10 @@ func parseRSS(r io.Reader) (*Feed, error) {
 		case "image":
 			if node := node.SelectElement("url"); node != nil {
 				feed.Image = node.InnerText()
+			}
+		case "lastBuildDate":
+			if t, err := parseDate(node.InnerText()); err == nil {
+				feed.Updated = t
 			}
 		case "item":
 			item := &Item{}
