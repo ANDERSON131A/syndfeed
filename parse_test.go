@@ -1,6 +1,8 @@
 package feedparser
 
 import (
+	"bytes"
+	"encoding/json"
 	"strings"
 	"testing"
 )
@@ -35,6 +37,10 @@ func TestRSS(t *testing.T) {
 	}
 	if len(feed.Items) == 0 {
 		t.Fatal("feed.Items is nil")
+	}
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(feed); err != nil {
+		t.Fatal(err)
 	}
 }
 

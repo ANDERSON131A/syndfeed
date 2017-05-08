@@ -1,8 +1,9 @@
 package feedparser
 
 import (
-	"io"
 	"time"
+
+	"github.com/antchfx/xquery/xml"
 )
 
 // Type represents feed types.
@@ -30,28 +31,48 @@ func (typ Type) String() string {
 
 // Feed is represents a RSS(Atom) feed output.
 type Feed struct {
-	Author      string
-	Title       string
-	Link        string
-	Updated     time.Time
-	Image       string
-	Language    string
-	Description string
-	Copyright   string
-	Version     string
-	Type        Type
-	Items       []*Item
+	// Type is type of feed, its RSS or Atom.
+	Type Type
+	// Title is the name of the channel.
+	Title string `json:"title"`
+	// Link is the URL to the HTML website corresponding to the channel.
+	Link string `json:"link"`
+	// Description is sentence describing for channel.
+	// atom: subtitle.
+	Description string `json:"description"`
+	// Category is list of category name.
+	Category []string `json:"categories,omitempty"`
+	// Copyright notice for content in the channel.
+	// atom: rights.
+	Copyright string `json:"copyright,omitempty"`
+	// Logo is the image logo of channel.
+	// rss: image
+	// atom: logo
+	Logo string `json:"logo,omitempty"`
+	// Updated is the last time the content of the channel changed.
+	// rss: lastBuildDate
+	// atom: updated
+	Updated time.Time `json:"pubDate"`
+	// Items is a list of article.
+	Items []*Item `json:"items"`
+
+	doc *xmlquery.Node
 }
 
-// Item represents a single entry in a given feed.
+// Document returns XML document object.
+func (f *Feed) Document() *xmlquery.Node {
+	return f.doc
+}
+
+// Item represents a single entry in the feed.
 type Item struct {
-	Title       string
-	Body        io.Reader
-	Link        string
-	Author      []string
-	Published   time.Time
-	Category    []string
-	Description string
+	Title       string    `json:"title"`
+	Content     string    `json:"content"`
+	Link        string    `json:"link"`
+	Author      []string  `json:"authors,omitempty"`
+	Category    []string  `json:"categories,omitempty"`
+	Published   time.Time `json:"pubDate"`
+	Description string    `json:"description"`
 }
 
 // ItemSlice provides sorting Item Slice by Published field.

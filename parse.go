@@ -11,59 +11,15 @@ import (
 	"github.com/antchfx/xquery/xml"
 )
 
-/*
-RSS and Atom Compared: https://www.intertwingly.net/wiki/pie/Rss20AndAtom10Compared
-*/
+// RSS and Atom Compared: https://www.intertwingly.net/wiki/pie/Rss20AndAtom10Compared
 
-var DefaultHandler = HandlerFunc(func(r io.Reader) (*Feed, error) {
-	return parse(r)
-})
-
-// Handler is an interface provides parsing Atom and RSS feeds.
-type Handler interface {
-	Parse(io.Reader) (*Feed, error)
-}
-
-// HandlerFunc is an adapter to allow the use of ordinary functions as feed handlers.
-type HandlerFunc func(io.Reader) (*Feed, error)
-
-func (f HandlerFunc) Parse(r io.Reader) (*Feed, error) {
-	return f(r)
-}
-
-// Parse parsing a give reader.
-func Parse(r io.Reader) (*Feed, error) {
-	return DefaultHandler.Parse(r)
-}
-
-func parse(r io.Reader) (*Feed, error) {
-	preview := make([]byte, 1024)
-	n, err := io.ReadFull(r, preview)
-	switch {
-	case err == io.ErrUnexpectedEOF:
-		preview = preview[:n]
-	case err != nil:
-		return nil, err
-	}
-
-	typ := detectFeedType(bytes.NewReader(preview))
-	r = io.MultiReader(bytes.NewReader(preview), r)
-	switch typ {
-	case TypeRSS:
-		return parseRSS(r)
-	case TypeAtom:
-		return parseAtom(r)
-	}
-	return nil, errors.New("unknown feed type")
-}
-
-// https://validator.w3.org/feed/docs/atom.html
+// parsing document with atom format. https://validator.w3.org/feed/docs/atom.html
 func parseAtom(r io.Reader) (*Feed, error) {
 	doc, err := xmlquery.Parse(r)
 	if err != nil {
 		return nil, err
 	}
-	feed := &Feed{Type: TypeAtom}
+	feed := &Feed{Type: TypeAtom, doc: doc}
 	for node := doc.SelectElement("feed").FirstChild; node != nil; node = node.NextSibling {
 		name := node.Data
 		if node.Prefix != "" {
@@ -81,7 +37,7 @@ func parseAtom(r io.Reader) (*Feed, error) {
 		case "rights":
 			feed.Copyright = node.InnerText()
 		case "logo":
-			feed.Image = node.InnerText()
+			feed.Logo = node.InnerText()
 		case "entry":
 			item := &Item{}
 			for node := node.FirstChild; node != nil; node = node.NextSibling {
@@ -100,7 +56,7 @@ func parseAtom(r io.Reader) (*Feed, error) {
 				case "summary":
 					item.Description = node.InnerText()
 				case "content":
-					item.Body = strings.NewReader(node.InnerText())
+					item.Content = node.InnerText()
 				case "published":
 					if t, err := parseDate(node.InnerText()); err == nil {
 						item.Published = t
@@ -119,15 +75,14 @@ func parseAtom(r io.Reader) (*Feed, error) {
 	return feed, nil
 }
 
-// https://validator.w3.org/feed/docs/rss2.html
+// parsing document with rss format. https://validator.w3.org/feed/docs/rss2.html
 func parseRSS(r io.Reader) (*Feed, error) {
 	doc, err := xmlquery.Parse(r)
 	if err != nil {
 		return nil, err
 	}
 
-	version := xmlquery.FindOne(doc, "rss").SelectAttr("version")
-	feed := &Feed{Type: TypeRSS, Version: version}
+	feed := &Feed{Type: TypeRSS, doc: doc}
 	for node := doc.SelectElement("rss/channel").FirstChild; node != nil; node = node.NextSibling {
 		name := node.Data
 		if node.Prefix != "" {
@@ -150,11 +105,9 @@ func parseRSS(r io.Reader) (*Feed, error) {
 			feed.Description = node.InnerText()
 		case "copyright":
 			feed.Copyright = node.InnerText()
-		case "language":
-			feed.Language = node.InnerText()
 		case "image":
 			if node := node.SelectElement("url"); node != nil {
-				feed.Image = node.InnerText()
+				feed.Logo = node.InnerText()
 			}
 		case "lastBuildDate":
 			if t, err := parseDate(node.InnerText()); err == nil {
@@ -183,13 +136,39 @@ func parseRSS(r io.Reader) (*Feed, error) {
 				case "dc:creator", "author":
 					item.Author = append(item.Author, node.InnerText())
 				case "content:encoded":
-					item.Body = strings.NewReader(node.InnerText())
+					item.Content = node.InnerText()
 				}
 			}
 			feed.Items = append(feed.Items, item)
 		}
 	}
 	return feed, nil
+}
+
+func parse(r io.Reader) (*Feed, error) {
+	preview := make([]byte, 1024)
+	n, err := io.ReadFull(r, preview)
+	switch {
+	case err == io.ErrUnexpectedEOF:
+		preview = preview[:n]
+	case err != nil:
+		return nil, err
+	}
+
+	typ := detectFeedType(bytes.NewReader(preview))
+	r = io.MultiReader(bytes.NewReader(preview), r)
+	switch typ {
+	case TypeRSS:
+		return parseRSS(r)
+	case TypeAtom:
+		return parseAtom(r)
+	}
+	return nil, errors.New("unknown feed type")
+}
+
+// Parse parses XML documents and returns Feed.
+func Parse(r io.Reader) (*Feed, error) {
+	return parse(r)
 }
 
 func detectFeedType(r io.Reader) Type {
