@@ -31,7 +31,7 @@ func parseAtom(r io.Reader) (*Feed, error) {
 		case "link":
 			feed.Link = node.SelectAttr("href")
 		case "updated":
-			if t, err := parseDate(node.InnerText()); err == nil {
+			if t, err := ParseDate(node.InnerText()); err == nil {
 				feed.Updated = t
 			}
 		case "rights":
@@ -58,7 +58,7 @@ func parseAtom(r io.Reader) (*Feed, error) {
 				case "content":
 					item.Content = node.InnerText()
 				case "published":
-					if t, err := parseDate(node.InnerText()); err == nil {
+					if t, err := ParseDate(node.InnerText()); err == nil {
 						item.Published = t
 					}
 				case "category":
@@ -110,7 +110,7 @@ func parseRSS(r io.Reader) (*Feed, error) {
 				feed.Logo = node.InnerText()
 			}
 		case "lastBuildDate":
-			if t, err := parseDate(node.InnerText()); err == nil {
+			if t, err := ParseDate(node.InnerText()); err == nil {
 				feed.Updated = t
 			}
 		case "item":
@@ -130,7 +130,7 @@ func parseRSS(r io.Reader) (*Feed, error) {
 				case "title":
 					item.Title = node.InnerText()
 				case "pubDate":
-					if t, err := parseDate(node.InnerText()); err == nil {
+					if t, err := ParseDate(node.InnerText()); err == nil {
 						item.Published = t
 					}
 				case "dc:creator", "author":
@@ -197,7 +197,7 @@ Loop:
 	return TypeUnknown
 }
 
-func parseDate(ds string) (t time.Time, err error) {
+func ParseDate(ds string) (t time.Time, err error) {
 	d := strings.TrimSpace(ds)
 	if d == "" {
 		return t, errors.New("invlaid date string")
