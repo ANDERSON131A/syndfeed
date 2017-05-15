@@ -32,7 +32,7 @@ func (typ Type) String() string {
 // Feed is represents a RSS(Atom) feed output.
 type Feed struct {
 	// Type is type of feed, its RSS or Atom.
-	Type Type
+	Type Type `json:"-"`
 	// Title is the name of the channel.
 	Title string `json:"title"`
 	// Link is the URL to the HTML website corresponding to the channel.
