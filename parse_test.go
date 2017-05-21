@@ -63,7 +63,7 @@ func TestAtom(t *testing.T) {
 		<summary>Some text.</summary>
 		<content type="xhtml">
 			<div xmlns="http://www.w3.org/1999/xhtml">
-				<p>This is the entry content.</p>
+				&lt;p&gt;This is the entry content.&lt;/p&gt;
 			</div>
 		</content>
 		<author>

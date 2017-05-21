@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/xml"
 	"errors"
+	"html"
 	"io"
 	"strings"
 	"time"
@@ -27,7 +28,7 @@ func parseAtom(r io.Reader) (*Feed, error) {
 		}
 		switch name {
 		case "title":
-			feed.Title = node.InnerText()
+			feed.Title = html.UnescapeString(node.InnerText())
 		case "link":
 			feed.Link = node.SelectAttr("href")
 		case "updated":
@@ -47,16 +48,16 @@ func parseAtom(r io.Reader) (*Feed, error) {
 				}
 				switch name {
 				case "title":
-					item.Title = node.InnerText()
+					item.Title = html.UnescapeString(node.InnerText())
 				case "link":
 					switch node.SelectAttr("rel") {
 					case "", "alternate":
 						item.Link = node.SelectAttr("href")
 					}
 				case "summary":
-					item.Description = node.InnerText()
+					item.Description = html.UnescapeString(node.InnerText())
 				case "content":
-					item.Content = node.InnerText()
+					item.Content = html.UnescapeString(node.InnerText())
 				case "published":
 					if t, err := ParseDate(node.InnerText()); err == nil {
 						item.Published = t
