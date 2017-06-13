@@ -1,91 +1,70 @@
 package feedparser
 
 import (
+	"encoding/json"
 	"time"
-
-	"github.com/antchfx/xquery/xml"
 )
 
-// Type represents feed types.
-type Type int
+// FeedType represents feed types.
+type FeedType int
 
 const (
-	// TypeUnknown represents feed type is  unknown.
-	TypeUnknown Type = iota
-	// TypeAtom represents feed type is Atom.
-	TypeAtom
-	// TypeRSS represents feed type is RSS.
-	TypeRSS
+	// AtomType represents feed type is Atom.
+	AtomType FeedType = iota
+	// RSSType represents feed type is RSS.
+	RSSType
 )
 
-func (typ Type) String() string {
-	switch typ {
-	case TypeAtom:
-		return "atom"
-	case TypeRSS:
-		return "rss"
-	default:
-		return "unknown"
-	}
-}
-
-// Feed is represents a RSS(Atom) feed output.
+// Feed is the web feed data for the Atom 1.0 or RSS 2.0.
 type Feed struct {
-	// Type is type of feed, its RSS or Atom.
-	Type Type `json:"-"`
-	// Title is the name of the channel.
-	Title string `json:"title"`
-	// Link is the URL to the HTML website corresponding to the channel.
-	Link string `json:"link"`
-	// Description is sentence describing for channel.
-	// atom: subtitle.
-	Description string `json:"description"`
-	// Category is list of category name.
-	Category []string `json:"categories,omitempty"`
-	// Copyright notice for content in the channel.
-	// atom: rights.
-	Copyright string `json:"copyright,omitempty"`
-	// Logo is the image logo of channel.
-	// rss: image
-	// atom: logo
-	Logo string `json:"logo,omitempty"`
-	// Updated is the last time the content of the channel changed.
-	// rss: lastBuildDate
-	// atom: updated
-	Updated time.Time `json:"pubDate"`
-	// Items is a list of article.
-	Items []*Item `json:"items"`
-
-	doc *xmlquery.Node
+	Title       string     `json:"title,omitempty"`
+	Description string     `json:"description,omitempty"`
+	Link        string     `json:"link,omitempty"`
+	FeedLink    string     `json:"feedLink,omitempty"`
+	Updated     *time.Time `json:"updated,omitempty"`
+	Published   *time.Time `json:"published,omitempty"`
+	Authors     []*Person  `json:"authors,omitempty"`
+	Language    string     `json:"language,omitempty"`
+	ImageURL    string     `json:"imageUrl,omitempty"`
+	Generator   string     `json:"generator,omitempty"`
+	Copyright   string     `json:"copyright,omitempty"`
+	Categories  []string   `json:"categories,omitempty"`
+	FeedType    FeedType   `json:"feedType"`
+	FeedVersion string     `json:"feedVersion"`
+	Items       []*Item    `json:"items"`
 }
 
-// Document returns XML document object.
-func (f *Feed) Document() *xmlquery.Node {
-	return f.doc
+func (f Feed) ToString() string {
+	json, _ := json.MarshalIndent(f, "", "    ")
+	return string(json)
 }
 
 // Item represents a single entry in the feed.
 type Item struct {
-	Title       string    `json:"title"`
-	Content     string    `json:"content"`
-	Link        string    `json:"link"`
-	Author      []string  `json:"authors,omitempty"`
-	Category    []string  `json:"categories,omitempty"`
-	Published   time.Time `json:"pubDate"`
-	Description string    `json:"description"`
+	Title       string       `json:"title,omitempty"`
+	Description string       `json:"description,omitempty"`
+	Content     string       `json:"content,omitempty"`
+	Link        string       `json:"link,omitempty"`
+	Updated     *time.Time   `json:"updated,omitempty"`
+	Published   *time.Time   `json:"published,omitempty"`
+	Authors     []*Person    `json:"author,omitempty"`
+	CommentURL  string       `json:"commentUrl,omitempty"`
+	GUID        string       `json:"guid,omitempty"`
+	ImageURL    string       `json:"imageUrl,omitempty"`
+	Categories  []string     `json:"categories,omitempty"`
+	Enclosures  []*Enclosure `json:"enclosures,omitempty"`
 }
 
-// ItemSlice provides sorting Item Slice by Published field.
-type ItemSlice []*Item
-
-func (slice ItemSlice) Len() int {
-	return len(slice)
+// Enclosure is a file associated with a given Item.
+type Enclosure struct {
+	URL    string `json:"url,omitempty"`
+	Length string `json:"length,omitempty"`
+	Type   string `json:"type,omitempty"`
 }
 
-func (slice ItemSlice) Swap(i, j int) {
-	slice[i], slice[j] = slice[j], slice[i]
-}
-
-func (slice ItemSlice) Less(i, j int) bool {
-	return slice[i].Published.Sub(slice[j].Published) < 0
+// Person is an author or contributor of the feed content.
+type Person struct {
+	Name  string `json:"name,omitempty"`
+	URL   string `json:"url,omitempty"`
+	Email string `json:"email,omitempty"`
 }

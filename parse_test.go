@@ -3,6 +3,7 @@ package feedparser
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"strings"
 	"testing"
 )
@@ -10,9 +11,12 @@ import (
 func TestRSS(t *testing.T) {
 	// https://en.wikipedia.org/wiki/RSS
 	rss := `<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
 <channel>
  <title>RSS Title</title>
+ <image>
+  <url>http://www.blogsmithmedia.com/cn.engadget.com/media/feedlogo.gif?cachebust=true</url>
+ </image>
  <description>This is an example of an RSS feed</description>
  <link>http://www.example.com/main.html</link>
  <lastBuildDate>Mon, 06 Sep 2010 00:01:00 +0000 </lastBuildDate>
@@ -23,6 +27,8 @@ func TestRSS(t *testing.T) {
   <description>Here is some text containing an interesting description.</description>
   <link>http://www.example.com/blog/post/1</link>
   <guid isPermaLink="true">7bd204c6-1655-4c27-aeee-53f933c5395f</guid>
+  <dc:creator><![CDATA[Andy Yang]]></dc:creator>
+  <content:encoded><![CDATA[Here is some text containing an interesting description.]]></content:encoded>
   <pubDate>Sun, 06 Sep 2009 16:20:00 +0000</pubDate>
  </item>
 </channel>
@@ -32,7 +38,7 @@ func TestRSS(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if feed.Type != TypeRSS {
+	if feed.FeedType != RSSType {
 		t.Fatal("expected feed type is not RSS")
 	}
 	if len(feed.Items) == 0 {
@@ -42,6 +48,7 @@ func TestRSS(t *testing.T) {
 	if err := json.NewEncoder(&buf).Encode(feed); err != nil {
 		t.Fatal(err)
 	}
+	fmt.Println(feed.ToString())
 }
 
 func TestAtom(t *testing.T) {
@@ -77,7 +84,7 @@ func TestAtom(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if feed.Type != TypeAtom {
+	if feed.FeedType != AtomType {
 		t.Fatal("expected feed type is not Atom")
 	}
 	if len(feed.Items) == 0 {

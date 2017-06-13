@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/xml"
 	"errors"
-	"html"
 	"io"
 	"strings"
 	"time"
@@ -12,141 +11,64 @@ import (
 	"github.com/antchfx/xquery/xml"
 )
 
-// RSS and Atom Compared: https://www.intertwingly.net/wiki/pie/Rss20AndAtom10Compared
+// ElementType indicates what web feed type of element.
+type ElementType int
 
-// parsing document with atom format. https://validator.w3.org/feed/docs/atom.html
-func parseAtom(r io.Reader) (*Feed, error) {
-	doc, err := xmlquery.Parse(r)
-	if err != nil {
-		return nil, err
-	}
-	feed := &Feed{Type: TypeAtom, doc: doc}
-	for node := doc.SelectElement("feed").FirstChild; node != nil; node = node.NextSibling {
-		name := node.Data
-		if node.Prefix != "" {
-			name = node.Prefix + ":" + name
-		}
-		switch name {
-		case "title":
-			feed.Title = html.UnescapeString(node.InnerText())
-		case "link":
-			feed.Link = node.SelectAttr("href")
-		case "updated":
-			if t, err := ParseDate(node.InnerText()); err == nil {
-				feed.Updated = t
-			}
-		case "rights":
-			feed.Copyright = node.InnerText()
-		case "logo":
-			feed.Logo = node.InnerText()
-		case "entry":
-			item := &Item{}
-			for node := node.FirstChild; node != nil; node = node.NextSibling {
-				name := node.Data
-				if node.Prefix != "" {
-					name = node.Prefix + ":" + name
-				}
-				switch name {
-				case "title":
-					item.Title = html.UnescapeString(node.InnerText())
-				case "link":
-					switch node.SelectAttr("rel") {
-					case "", "alternate":
-						item.Link = node.SelectAttr("href")
-					}
-				case "summary":
-					item.Description = html.UnescapeString(node.InnerText())
-				case "content":
-					item.Content = html.UnescapeString(node.InnerText())
-				case "published":
-					if t, err := ParseDate(node.InnerText()); err == nil {
-						item.Published = t
-					}
-				case "category":
-					item.Category = append(item.Category, node.SelectAttr("term"))
-				case "author":
-					if node := node.SelectElement("name"); node != nil {
-						item.Author = append(item.Author, node.InnerText())
-					}
-				}
-			}
-			feed.Items = append(feed.Items, item)
-		}
-	}
-	return feed, nil
+const (
+	FeedElement ElementType = iota
+	ItemElement
+)
+
+type ElementHandler interface {
+	ParseElement(*xmlquery.Node, interface{}, ElementType)
 }
 
-// parsing document with rss format. https://validator.w3.org/feed/docs/rss2.html
-func parseRSS(r io.Reader) (*Feed, error) {
-	doc, err := xmlquery.Parse(r)
-	if err != nil {
-		return nil, err
-	}
+type elementHandlerFunc func(*xmlquery.Node, interface{}, ElementType)
 
-	feed := &Feed{Type: TypeRSS, doc: doc}
-	for node := doc.SelectElement("rss/channel").FirstChild; node != nil; node = node.NextSibling {
-		name := node.Data
-		if node.Prefix != "" {
-			name = node.Prefix + ":" + name
-		}
-		switch name {
-		case "title":
-			feed.Title = node.InnerText()
-		case "link":
-			// `atom:link` score > `link`
-			if feed.Link == "" {
-				feed.Link = node.InnerText()
-			}
-		case "atom:link":
-			// <atom:link href="" rel="self"></atom:link>
-			if node.SelectAttr("rel") == "self" {
-				feed.Link = node.SelectAttr("href")
-			}
-		case "description":
-			feed.Description = node.InnerText()
-		case "copyright":
-			feed.Copyright = node.InnerText()
-		case "image":
-			if node := node.SelectElement("url"); node != nil {
-				feed.Logo = node.InnerText()
-			}
-		case "lastBuildDate":
-			if t, err := ParseDate(node.InnerText()); err == nil {
-				feed.Updated = t
-			}
-		case "item":
-			item := &Item{}
-			for node := node.FirstChild; node != nil; node = node.NextSibling {
-				name := node.Data
-				if node.Prefix != "" {
-					name = node.Prefix + ":" + name
-				}
-				switch name {
-				case "category":
-					item.Category = append(item.Category, node.InnerText())
-				case "description":
-					item.Description = node.InnerText()
-				case "link":
-					item.Link = node.InnerText()
-				case "title":
-					item.Title = node.InnerText()
-				case "pubDate":
-					if t, err := ParseDate(node.InnerText()); err == nil {
-						item.Published = t
-					}
-				case "dc:creator", "author":
-					item.Author = append(item.Author, node.InnerText())
-				case "content:encoded":
-					item.Content = node.InnerText()
-				}
-			}
-			feed.Items = append(feed.Items, item)
-		}
-	}
-	return feed, nil
+func (f elementHandlerFunc) ParseElement(n *xmlquery.Node, v interface{}, t ElementType) {
+	f(n, v, t)
 }
 
-func parse(r io.Reader) (*Feed, error) {
+var atomModule = elementHandlerFunc(func(n *xmlquery.Node, v interface{}, t ElementType) {
+	if t == FeedElement {
+		feed := v.(*Feed)
+		switch n.Data {
+		case "link":
+			if n.SelectAttr("rel") == "self" {
+				feed.FeedLink = n.SelectAttr("href")
+			} else {
+				feed.Link = n.SelectAttr("href")
+			}
+		}
+	} else {
+		// item
+	}
+})
+
+var dublincoreModule = elementHandlerFunc(func(n *xmlquery.Node, v interface{}, t ElementType) {
+	if t == ItemElement {
+		item := v.(*Item)
+		switch n.Data {
+		case "creator":
+			item.Authors = append(item.Authors, &Person{Name: n.InnerText()})
+		}
+	}
+})
+
+var contentModule = elementHandlerFunc(func(n *xmlquery.Node, v interface{}, t ElementType) {
+	if t == ItemElement {
+		v.(*Item).Content = n.InnerText()
+	}
+})
+
+var modules = map[string]ElementHandler{
+	"http://www.w3.org/2005/Atom":              atomModule,
+	"http://purl.org/dc/elements/1.1/":         dublincoreModule,
+	"http://purl.org/rss/1.0/modules/content/": contentModule,
+}
+
+// Parse parses XML documents and returns Feed.
+func Parse(r io.Reader) (*Feed, error) {
 	preview := make([]byte, 1024)
 	n, err := io.ReadFull(r, preview)
 	switch {
@@ -155,24 +77,24 @@ func parse(r io.Reader) (*Feed, error) {
 	case err != nil:
 		return nil, err
 	}
-
-	typ := detectFeedType(bytes.NewReader(preview))
+	typ, err := detectFeedType(bytes.NewReader(preview))
+	if err != nil {
+		return nil, err
+	}
 	r = io.MultiReader(bytes.NewReader(preview), r)
-	switch typ {
-	case TypeRSS:
+	if typ == RSSType {
 		return parseRSS(r)
-	case TypeAtom:
+	} else {
 		return parseAtom(r)
 	}
-	return nil, errors.New("unknown feed type")
 }
 
-// Parse parses XML documents and returns Feed.
-func Parse(r io.Reader) (*Feed, error) {
-	return parse(r)
+// RegisterModule registers an extension module to handle custom elements with namespace prefix.
+func RegisterModule(ns string, handler ElementHandler) {
+	modules[ns] = handler
 }
 
-func detectFeedType(r io.Reader) Type {
+func detectFeedType(r io.Reader) (typ FeedType, err error) {
 	decoder := xml.NewDecoder(r)
 Loop:
 	for {
@@ -183,19 +105,21 @@ Loop:
 		case err != nil:
 			break Loop
 		}
+
 		switch tok := tok.(type) {
 		case xml.StartElement:
 			switch tok.Name.Local {
 			case "rss":
-				return TypeRSS
+				typ = RSSType
 			case "feed":
-				return TypeAtom
+				typ = AtomType
 			default:
-				break Loop
+				err = errors.New("unknown feed type")
 			}
+			break Loop
 		}
 	}
-	return TypeUnknown
+	return
 }
 
 func ParseDate(ds string) (t time.Time, err error) {
