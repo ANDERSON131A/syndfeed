@@ -47,7 +47,7 @@ type Item struct {
 	Link        string       `json:"link,omitempty"`
 	Updated     *time.Time   `json:"updated,omitempty"`
 	Published   *time.Time   `json:"published,omitempty"`
-	Authors     []*Person    `json:"author,omitempty"`
+	Authors     []*Person    `json:"authors,omitempty"`
 	CommentURL  string       `json:"commentUrl,omitempty"`
 	GUID        string       `json:"guid,omitempty"`
 	ImageURL    string       `json:"imageUrl,omitempty"`

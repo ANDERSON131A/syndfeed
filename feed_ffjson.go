@@ -1525,7 +1525,7 @@ func (mj *Item) MarshalJSONBuf(buf fflib.EncodingBuffer) error {
 		}
 	}
 	if len(mj.Authors) != 0 {
-		buf.WriteString(`"author":`)
+		buf.WriteString(`"authors":`)
 		if mj.Authors != nil {
 			buf.WriteString(`[`)
 			for i, v := range mj.Authors {
@@ -1659,7 +1659,7 @@ var ffj_key_Item_Updated = []byte("updated")
 
 var ffj_key_Item_Published = []byte("published")
 
-var ffj_key_Item_Authors = []byte("author")
+var ffj_key_Item_Authors = []byte("authors")
 
 var ffj_key_Item_CommentURL = []byte("commentUrl")
 
@@ -1852,7 +1852,7 @@ mainparse:
 					goto mainparse
 				}
 
-				if fflib.SimpleLetterEqualFold(ffj_key_Item_Authors, kn) {
+				if fflib.EqualFoldRight(ffj_key_Item_Authors, kn) {
 					currentKey = ffj_t_Item_Authors
 					state = fflib.FFParse_want_colon
 					goto mainparse
