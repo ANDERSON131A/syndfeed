@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/antchfx/xquery/xml"
+	"github.com/antchfx/xmlquery"
 )
 
 // ElementType indicates what web feed type of element.

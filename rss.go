@@ -3,7 +3,7 @@ package feedparser
 import (
 	"io"
 
-	"github.com/antchfx/xquery/xml"
+	"github.com/antchfx/xmlquery"
 )
 
 // parsing an RSS reader.
