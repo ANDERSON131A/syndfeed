@@ -1,93 +1,161 @@
-package feedparser
+package syndfeed
 
 import (
+	"errors"
 	"html"
 	"io"
 
-	"github.com/antchfx/xquery/xml"
+	"github.com/antchfx/xmlquery"
 )
 
-func parseAtomAuthorElement(elem *xmlquery.Node) *Person {
-	author := new(Person)
+// Atom is an Atom feed parser.
+// https://validator.w3.org/feed/docs/rfc4287.html
+type Atom struct{}
+
+func (a *Atom) parseItemElement(elem *xmlquery.Node, ns map[string]string) *SyndItem {
+	item := new(SyndItem)
 	for elem := elem.FirstChild; elem != nil; elem = elem.NextSibling {
 		switch elem.Data {
-		case "name":
-			author.Name = elem.InnerText()
-		case "email":
-			author.Email = elem.InnerText()
-		case "uri":
-			author.URL = elem.InnerText()
+		case "author":
+			item.Authors = append(item.Authors, a.parseAuthorElement(elem))
+		case "category":
+			if v := elem.SelectAttr("term"); v != "" {
+				item.Categories = append(item.Categories, v)
+			}
+		case "contributor":
+			item.Contributors = append(item.Contributors, a.parseAuthorElement(elem))
+		case "id":
+			item.Id = elem.InnerText()
+		case "title":
+			item.Title = elem.InnerText()
+		case "link":
+			item.Links = append(item.Links, a.parseLinkElement(elem))
+		case "published":
+			if t, err := parseDateString(elem.InnerText()); err == nil {
+				item.PublishDate = t
+			}
+		case "rights":
+			item.Copyright = elem.InnerText()
+		case "summary":
+			item.Summary = html.UnescapeString(elem.InnerText())
+		case "updated":
+			if t, err := parseDateString(elem.InnerText()); err == nil {
+				item.LastUpdatedTime = t
+			}
+		case "content":
+			item.Content = html.UnescapeString(elem.InnerText())
+		case "source":
+		default:
+			if ns, ok := ns[elem.Prefix]; ok {
+				item.ElementExtensions = append(item.ElementExtensions, &SyndElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
+				if m, ok := modules[ns]; ok {
+					m.ParseElement(elem, item)
+				}
+			}
 		}
+	}
+	return item
+}
+
+func (a *Atom) parseLinkElement(elem *xmlquery.Node) *SyndLink {
+	return &SyndLink{
+		URL:       html.UnescapeString(elem.SelectAttr("href")),
+		Title:     elem.SelectAttr("title"),
+		MediaType: elem.SelectAttr("type"),
+		RelType:   elem.SelectAttr("rel"),
+	}
+}
+
+func (a *Atom) parseAuthorElement(elem *xmlquery.Node) *SyndPerson {
+	author := new(SyndPerson)
+	if n := elem.SelectElement("name"); n != nil {
+		author.Name = n.InnerText()
+	}
+	if n := elem.SelectElement("uri"); n != nil {
+		author.URL = n.InnerText()
+	}
+	if n := elem.SelectElement("email"); n != nil {
+		author.Email = n.InnerText()
 	}
 	return author
 }
 
-func parseAtom(r io.Reader) (*Feed, error) {
-	doc, err := xmlquery.Parse(r)
-	if err != nil {
-		return nil, err
+func (a *Atom) parse(doc *xmlquery.Node) (*SyndFeed, error) {
+	root := doc.SelectElement("feed")
+	if root == nil {
+		return nil, errors.New("invalid Atom document without feed element")
 	}
 
-	root := doc.SelectElement("feed")
-	feed := &Feed{FeedType: AtomType}
-	feed.FeedVersion = root.SelectAttr("version")
+	feed := &SyndFeed{Version: "1.0"} // default atom version is 1.0
+	feed.Namespace = make(map[string]string)
+	// xmlns:prefix = namespace
+	for _, attr := range root.Attr {
+		switch {
+		case attr.Name.Local == "version":
+			feed.Version = attr.Value
+		case attr.Name.Space == "xmlns":
+			feed.Namespace[attr.Name.Local] = attr.Value
+		}
+	}
 
 	for elem := root.FirstChild; elem != nil; elem = elem.NextSibling {
 		switch elem.Data {
-		case "title":
-			feed.Title = elem.InnerText()
-		case "updated":
-			if t, err := ParseDate(elem.InnerText()); err == nil {
-				feed.Updated = &t
-			}
 		case "author":
-			feed.Authors = append(feed.Authors, parseAtomAuthorElement(elem))
-		case "link":
-			if elem.SelectAttr("rel") == "self" {
-				feed.FeedLink = elem.SelectAttr("href")
-			} else {
-				feed.Link = elem.SelectAttr("href")
-			}
+			feed.Authors = append(feed.Authors, a.parseAuthorElement(elem))
 		case "category":
-			if term := elem.SelectAttr("category"); term != "" {
-				feed.Categories = append(feed.Categories, term)
+			if v := elem.SelectAttr("term"); v != "" {
+				feed.Categories = append(feed.Categories, v)
 			}
+		case "contributor":
+			feed.Contributors = append(feed.Contributors, a.parseAuthorElement(elem))
 		case "generator":
 			feed.Generator = elem.InnerText()
+		case "id":
+			feed.Id = elem.InnerText()
+		case "link":
+			feed.Links = append(feed.Links, a.parseLinkElement(elem))
 		case "logo":
 			feed.ImageURL = elem.InnerText()
 		case "rights":
 			feed.Copyright = elem.InnerText()
 		case "subtitle":
 			feed.Description = elem.InnerText()
+		case "title":
+			feed.Title = elem.InnerText()
+		case "updated":
+			if t, err := parseDateString(elem.InnerText()); err == nil {
+				feed.LastUpdatedTime = t
+			}
 		case "entry":
-			item := new(Item)
-			for elem := elem.FirstChild; elem != nil; elem = elem.NextSibling {
-				switch elem.Data {
-				case "id":
-					item.GUID = elem.InnerText()
-				case "title":
-					item.Title = elem.InnerText()
-				case "updated":
-					if t, err := ParseDate(elem.InnerText()); err == nil {
-						item.Updated = &t
-					}
-				case "author":
-					item.Authors = append(item.Authors, parseAtomAuthorElement(elem))
-				case "content":
-					item.Content = html.UnescapeString(elem.InnerText())
-				case "link":
-					if elem.SelectAttr("rel") == "alternate" {
-						item.Link = elem.SelectAttr("href")
-					} else if item.Link == "" {
-						item.Link = elem.SelectAttr("href")
-					}
-				case "summary":
-					item.Description = html.UnescapeString(elem.InnerText())
+			item := a.parseItemElement(elem, feed.Namespace)
+			feed.Items = append(feed.Items, item)
+		case "icon":
+		case "published":
+		case "source":
+		default:
+			if ns, ok := feed.Namespace[elem.Prefix]; ok {
+				feed.ElementExtensions = append(feed.ElementExtensions, &SyndElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
+				if m, ok := modules[ns]; ok {
+					m.ParseElement(elem, feed)
 				}
 			}
-			feed.Items = append(feed.Items, item)
 		}
 	}
 	return feed, nil
+}
+
+// Parse parses an atom feed.
+func (a *Atom) Parse(r io.Reader) (*SyndFeed, error) {
+	doc, err := xmlquery.Parse(r)
+	if err != nil {
+		return nil, err
+	}
+	return a.parse(doc)
+}
+
+var atom = &Atom{}
+
+// ParseAtom parses Atom feed from the specified io.Reader r.
+func ParseAtom(r io.Reader) (*SyndFeed, error) {
+	return atom.Parse(r)
 }

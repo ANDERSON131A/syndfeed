@@ -1,70 +1,98 @@
-package feedparser
+package syndfeed
 
 import (
-	"encoding/json"
+	"errors"
+	"io"
+	"net/http"
 	"time"
+
+	"github.com/antchfx/xmlquery"
 )
 
-// FeedType represents feed types.
-type FeedType int
-
-const (
-	// AtomType represents feed type is Atom.
-	AtomType FeedType = iota
-	// RSSType represents feed type is RSS.
-	RSSType
-)
-
-// Feed is the web feed data for the Atom 1.0 or RSS 2.0.
-type Feed struct {
-	Title       string     `json:"title,omitempty"`
-	Description string     `json:"description,omitempty"`
-	Link        string     `json:"link,omitempty"`
-	FeedLink    string     `json:"feedLink,omitempty"`
-	Updated     *time.Time `json:"updated,omitempty"`
-	Published   *time.Time `json:"published,omitempty"`
-	Authors     []*Person  `json:"authors,omitempty"`
-	Language    string     `json:"language,omitempty"`
-	ImageURL    string     `json:"imageUrl,omitempty"`
-	Generator   string     `json:"generator,omitempty"`
-	Copyright   string     `json:"copyright,omitempty"`
-	Categories  []string   `json:"categories,omitempty"`
-	FeedType    FeedType   `json:"feedType"`
-	FeedVersion string     `json:"feedVersion"`
-	Items       []*Item    `json:"items"`
+// SyndFeed is top-level feed object, <feed> in Atom 1.0 and
+// <rss> in RSS 2.0.
+type SyndFeed struct {
+	Authors      []*SyndPerson
+	BaseURL      string
+	Categories   []string
+	Contributors []*SyndPerson
+	Copyright    string
+	Namespace    map[string]string // map[namespace-prefix]namespace-url
+	Description  string
+	Generator    string
+	Id           string
+	ImageURL     string
+	Items        []*SyndItem
+	Language     string
+	// LastUpdatedTime is the feed was last updated time.
+	LastUpdatedTime   time.Time
+	Title             string
+	Links             []*SyndLink
+	Version           string
+	ElementExtensions []*SyndElementExtension
 }
 
-func (f Feed) ToString() string {
-	json, _ := json.MarshalIndent(f, "", "    ")
-	return string(json)
+// SyndLink represents a link within a syndication
+// feed or item.
+type SyndLink struct {
+	MediaType string
+	URL       string
+	Title     string
+	RelType   string
 }
 
-// Item represents a single entry in the feed.
-type Item struct {
-	Title       string       `json:"title,omitempty"`
-	Description string       `json:"description,omitempty"`
-	Content     string       `json:"content,omitempty"`
-	Link        string       `json:"link,omitempty"`
-	Updated     *time.Time   `json:"updated,omitempty"`
-	Published   *time.Time   `json:"published,omitempty"`
-	Authors     []*Person    `json:"authors,omitempty"`
-	CommentURL  string       `json:"commentUrl,omitempty"`
-	GUID        string       `json:"guid,omitempty"`
-	ImageURL    string       `json:"imageUrl,omitempty"`
-	Categories  []string     `json:"categories,omitempty"`
-	Enclosures  []*Enclosure `json:"enclosures,omitempty"`
+// SyndItem is a feed item.
+type SyndItem struct {
+	BaseURL      string
+	Authors      []*SyndPerson
+	Contributors []*SyndPerson
+	Categories   []string
+	Content      string
+	Copyright    string
+	Id           string
+	// LastUpdatedTime is the feed item last updated time.
+	LastUpdatedTime time.Time
+	Links           []*SyndLink
+	// PublishDate is the feed item publish date.
+	PublishDate       time.Time
+	Summary           string
+	Title             string
+	ElementExtensions []*SyndElementExtension
+	//CommentURL      string
 }
 
-// Enclosure is a file associated with a given Item.
-type Enclosure struct {
-	URL    string `json:"url,omitempty"`
-	Length string `json:"length,omitempty"`
-	Type   string `json:"type,omitempty"`
+// SyndPerson is an author or contributor of the feed content.
+type SyndPerson struct {
+	Name  string
+	URL   string
+	Email string
 }
 
-// Person is an author or contributor of the feed content.
-type Person struct {
-	Name  string `json:"name,omitempty"`
-	URL   string `json:"url,omitempty"`
-	Email string `json:"email,omitempty"`
+// SyndElementExtension is an syndication element extension.
+type SyndElementExtension struct {
+	Name, Namespace, Value string
+}
+
+// Parse parses a syndication feed(RSS,Atom).
+func Parse(r io.Reader) (*SyndFeed, error) {
+	doc, err := xmlquery.Parse(r)
+	if err != nil {
+		return nil, err
+	}
+	if doc.SelectElement("rss") != nil {
+		return rss.parse(doc)
+	} else if doc.SelectElement("feed") != nil {
+		return atom.parse(doc)
+	}
+	return nil, errors.New("invalid syndication feed without <rss> or <feed> element")
+}
+
+// LoadURL loads a syndication feed URL.
+func LoadURL(url string) (*SyndFeed, error) {
+	res, err := http.Get(url)
+	if err != nil {
+		return nil, err
+	}
+	defer res.Body.Close()
+	return Parse(res.Body)
 }

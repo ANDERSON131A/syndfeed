@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">freeform goodness</title>
+<subtitle type="html">
+an irregularly updated weblog, since 2003
+</subtitle>
+<id>http://www.freeke.org/ffg/index.atom</id>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg" />
+<link rel="self" type="application/atom+xml" href="http://www.freeke.org/ffg/index.atom" />
+
+
+<author>
+<name>d.w.</name>
+<uri>http:&#x2F;&#x2F;www.freeke.org&#x2F;ffg&#x2F;index.atom</uri>
+<email>daddy@freeke.org</email>
+</author>
+<rights>Copyright 2002-2016 Dave Walker</rights>
+<generator uri="http://pyblosxom.github.com/" version="1.5.3">
+Pyblosxom hhttp://pyblosxom.github.com/ 1.5.3
+</generator>
+
+<updated>2018-01-01T01:15:25Z</updated>
+
+<entry>
+<title type="html">Closing Out 2017 In The Snow</title>
+<category term="/personal/family" />
+<id>http://www.freeke.org/ffg/2017/12/31/2017_Dec_31</id>
+<updated>2018-01-01T01:15:25Z</updated>
+<published>2018-01-01T01:15:25Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/personal/family/2017_Dec_31.html" />
+<content type="html">
+
+        &lt;div
+            data-live-photo
+            data-photo-src=&quot;http:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2017&#x2F;IMG_0104.jpg&quot;
+            data-video-src=&quot;http:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2017&#x2F;IMG_0104.mov&quot;
+            style=&quot;width: 672px; height: 504px&quot;&gt;            
+        &lt;&#x2F;div&gt;
+
+
+</content>
+</entry>
+
+<entry>
+<title type="html">Airpods Are Awesome (With a Couple of Caveats)</title>
+<category term="/tech/gadgets" />
+<id>http://www.freeke.org/ffg/2017/11/22/airpods</id>
+<updated>2017-11-22T22:19:56Z</updated>
+<published>2017-11-22T22:19:56Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/tech/gadgets/airpods.html" />
+<content type="html">
+
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2017&#x2F;unshaven_airpods.jpg&quot;
+alt=&quot;See Airpod in ear. I need a shave.&quot; title=&quot;&quot; width=&quot;270&quot;
+align=&quot;right&quot;&gt; Iâ€™m &lt;em&gt;often&lt;&#x2F;em&gt; an early adopter when it comes to
+Apple gear. I picked up my Apple Watch, iPad, and a few other
+things on launch day. When Apple introduced Airpods in 2016,
+though, I held back a while, for a few reasons.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Iâ€™m not a huge fan of earbuds. I think Iâ€™ve got slightly
+funny-shaped ear canals, so they never quite feel right in my ears
+(i.e. they always feel like theyâ€™re on the verge of falling
+out)&lt;&#x2F;li&gt;
+&lt;li&gt;Though Iâ€™m by no means an audiophile, Iâ€™m not a big fan of
+open-ear headphones. They donâ€™t really isolate you much from
+outside sound (which has its pros and cons, more on this later),
+and... I like bass.&lt;&#x2F;li&gt;
+&lt;li&gt;At $159, theyâ€™re not an impulse buy. The only time Iâ€™ve ever
+spent more than $75 on a pair of earphones was for a pair of
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Sony_MDR-V6&quot;&gt;Sony studio
+monitors&lt;&#x2F;a&gt; (which were totally worth it, BTW.) These are also
+tiny, which potentially translates to â€œeasy to lose.â€&lt;&#x2F;li&gt;
+&lt;li&gt;Bluetooth largely sucks (but Apple seems to have eliminated
+most of the pain points -- see below.)&lt;&#x2F;li&gt;
+&lt;li&gt;They were a 1.0 product with a lot of unproven tech.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Let me get the other disclaimers (the caveats mentioned in my
+title) out of the way first. If youâ€™re not completely inside the
+Apple ecosystem, these are probably not for you. Like a lot of
+Apple products, a lot of their virtues come from their integration
+with the rest of the ecosystem. If youâ€™re an Android person with a
+Windows or Linux laptop, keep looking.&lt;&#x2F;p&gt;
+&lt;p&gt;If you primarily buy earphones&#x2F;headphones for audio quality,
+keep looking. These are (quite) decent as far as earbuds go, but
+theyâ€™ll never sound as good as a set of high-end closed-ear
+phones.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2017&#x2F;airpodfins.jpg&quot; alt=
+&quot;fins for yr. airpods&quot; align=&quot;right&quot; width=&quot;250&quot;&gt; &lt;a href=
+&quot;https:&#x2F;&#x2F;smile.amazon.com&#x2F;gp&#x2F;product&#x2F;B072KH4BZQ&quot;&gt;The solution&lt;&#x2F;a&gt;
+to my â€œearpods fit weird in my earsâ€ issue was surprisingly
+simple.&lt;&#x2F;p&gt;
+&lt;p&gt;That said, I finally found a use case that justified picking
+them up. We live in an open plan house, and I like watching TV at
+night (really, itâ€™s the only chance I get.) Iâ€™ve tried other
+solutions for balancing the TV volume, but generally speaking Iâ€™m
+either in a situation when I canâ€™t hear programming well enough to
+enjoy it, or Iâ€™m annoying others in the house. &lt;em&gt;The&lt;&#x2F;em&gt; killer
+feature for Airpods, for me, is that I could pair them at the
+iCloud account level. This means that after pairing them once on my
+iPhone, they automagically became accessible from my Apple Watch,
+my iPad, my MacBook, and, most importantly, &lt;em&gt;my Apple TV&lt;&#x2F;em&gt;.
+Plop them in your ears, then hold down the play&#x2F;pause button until
+the audio output device selector pops up. &lt;em&gt;There is no step
+3&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I use them sometimes from my phone (mostly when grocery
+shopping), but where theyâ€™re most useful is at the office (paired
+to my MacBook Pro) and on the aforementioned Apple TV. Since
+theyâ€™re not completely audio-isolating, they work well in an office
+where people may actually have need to get your attention, and
+since youâ€™re sitting down, youâ€™re not really worried about them
+falling out. They also work surprisingly well for conference
+calls.&lt;&#x2F;p&gt;
+&lt;p&gt;I havenâ€™t even gotten into how clever the charging case is, or
+how slick and painless it is moving them between your various
+devices, or how much better the AAC compression sounds than
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;List_of_Bluetooth_profiles#Advanced_Audio_Distribution_Profile_.28A2DP.29&quot;&gt;
+A2DP&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;In short, theyâ€™re great and Iâ€™m very glad I bought them.&lt;&#x2F;p&gt;
+
+
+</content>
+</entry>
+
+<entry>
+<title type="html">Fez-Wearing Dragon in the Living Room</title>
+<category term="/tech/computers/os/ios" />
+<id>http://www.freeke.org/ffg/2017/10/07/ar_dragon</id>
+<updated>2017-10-07T14:21:29Z</updated>
+<published>2017-10-07T14:21:29Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/tech/computers/os/ios/ar_dragon.html" />
+<content type="html">
+
+&lt;p&gt;I donâ€™t know if AR is â€œcoolerâ€ than VR, but at least you donâ€™t
+need a stupid looking hunk of geek strapped to your face to try
+it.&lt;&#x2F;p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=
+&quot;https:&#x2F;&#x2F;www.youtube-nocookie.com&#x2F;embed&#x2F;SqoNMw5f_0w&quot; frameborder=
+&quot;0&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;
+&lt;p&gt;&lt;a href=
+&quot;https:&#x2F;&#x2F;itunes.apple.com&#x2F;us&#x2F;app&#x2F;ar-dragon&#x2F;id1270046606?mt=8&quot;&gt;AR
+Dragon&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+
+
+</content>
+</entry>
+
+<entry>
+<title type="html">Little Boy, Doing Little Boy Things</title>
+<category term="/personal/family" />
+<id>http://www.freeke.org/ffg/2017/07/23/jacob_starr-park</id>
+<updated>2017-07-23T14:44:52Z</updated>
+<published>2017-07-23T14:44:52Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/personal/family/jacob_starr-park.html" />
+<content type="html">
+
+&lt;div class=&quot;tg-wrap&quot;&gt;
+&lt;table class=&quot;tg&quot;&gt;
+&lt;tr&gt;
+&lt;th class=&quot;tg-baqh&quot; colspan=&quot;2&quot;&gt;&lt;img src=
+&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2017&#x2F;awayfromexplosions.jpg&quot; width=&quot;650&quot;
+alt=&quot;Aerosmith plays as things explode in the background&quot;&gt;&lt;&#x2F;th&gt;
+&lt;&#x2F;tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tg-baqh&quot;&gt;&lt;img src=
+&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2017&#x2F;grinning.jpg&quot; width=&quot;325&quot; alt=
+&quot;a big smile&quot;&gt;&lt;&#x2F;td&gt;
+&lt;td class=&quot;tg-baqh&quot;&gt;&lt;img src=
+&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2017&#x2F;telescope.jpg&quot; width=&quot;325&quot; alt=
+&quot;krakens ahoy!&quot;&gt;&lt;&#x2F;td&gt;
+&lt;&#x2F;tr&gt;
+&lt;&#x2F;table&gt;
+&lt;&#x2F;div&gt;
+
+
+</content>
+</entry>
+
+<entry>
+<title type="html">Red Tea</title>
+<category term="/entertainment/foodanddrink" />
+<id>http://www.freeke.org/ffg/2017/05/18/rooibos</id>
+<updated>2017-05-18T22:08:30Z</updated>
+<published>2017-05-18T22:08:30Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/entertainment/foodanddrink/rooibos.html" />
+<content type="html">
+
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2017&#x2F;rooibos.jpg&quot;&gt;&lt;img src=
+&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2017&#x2F;rooibos_1300.jpg&quot;
+     alt=&quot;Red tea&quot;
+	 width=&quot;650&quot;
+     title=&quot;&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;My current obsession is &lt;a href=
+&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Rooibos&quot;&gt;rooibos tea&lt;&#x2F;a&gt;, served
+with a teaspoon of heavy cream and lightly sugared. Really hits the
+spot towards the end of the workday.&lt;&#x2F;p&gt;
+
+</content>
+</entry>
+
+<entry>
+<title type="html">JSON Feed</title>
+<category term="/tech/computers/internet" />
+<id>http://www.freeke.org/ffg/2017/05/18/jsonfeed</id>
+<updated>2017-05-18T21:24:48Z</updated>
+<published>2017-05-18T21:24:48Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/tech/computers/internet/jsonfeed.html" />
+<content type="html">
+
+&lt;p&gt;As someone who lived through the &lt;a href=
+&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;cgi-bin&#x2F;omega?P=atom+rss+winer&amp;amp;DEFAULTOP=or&amp;amp;DB=default&amp;amp;FMT=query&amp;amp;xP=Zatom&amp;amp;xDB=default&amp;amp;xFILTERS=--O&quot;&gt;
+Syndication Wars&lt;&#x2F;a&gt;, I find &lt;a href=
+&quot;https:&#x2F;&#x2F;jsonfeed.org&#x2F;2017&#x2F;05&#x2F;17&#x2F;announcing_json_feed&quot;&gt;this&lt;&#x2F;a&gt;
+interesting.&lt;&#x2F;p&gt;
+&lt;p&gt;Iâ€™m way older and balder than last time. I also have a
+4-year-old, so Iâ€™m sitting this one out. It looks like a PyBlosxom
+plugin would be a Saturday afternoon project or so, but I donâ€™t
+really have Saturday afternoons free anymore.&lt;&#x2F;p&gt;
+
+</content>
+</entry>
+
+<entry>
+<title type="html">Never. Sleeping. Again.</title>
+<category term="/misc" />
+<id>http://www.freeke.org/ffg/2017/04/17/neversleep</id>
+<updated>2017-04-17T15:44:14Z</updated>
+<published>2017-04-17T15:44:14Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/misc/neversleep.html" />
+<content type="html">
+
+&lt;p&gt;Woke last night to the sensation of something scurrying across
+my abdomen. Swatted instinctively, felt a handful ofâ€¦ something.
+Carried it into the bathroom, hit the light, and found a dead
+centipede in my hand.&lt;&#x2F;p&gt;
+
+
+</content>
+</entry>
+
+<entry>
+<title type="html">Jakeâ€™s Cake</title>
+<category term="/personal/family" />
+<id>http://www.freeke.org/ffg/2017/01/05/jake_cake</id>
+<updated>2017-01-05T17:15:23Z</updated>
+<published>2017-01-05T17:15:23Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/personal/family/jake_cake.html" />
+<content type="html">
+
+&lt;p&gt;We really liked the way Jakeâ€™s birthday cake (from a little over
+2 weeks ago) turned out.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=
+&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2017&#x2F;cake_scooty.jpg&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2017&#x2F;cake_scooty_1300.jpg&quot;
+     alt=&quot;A little red cake scooty&quot;
+     title=&quot;A little red cake scooty&quot;
+     width=&quot;650&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+
+</content>
+</entry>
+
+<entry>
+<title type="html">Happy Holidays 2016</title>
+<category term="/beauty" />
+<id>http://www.freeke.org/ffg/2016/12/23/holidays_2016</id>
+<updated>2016-12-23T16:27:11Z</updated>
+<published>2016-12-23T16:27:11Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/beauty/holidays_2016.html" />
+<content type="html">
+
+&lt;p&gt;&lt;a href=
+&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;ornament_2016.jpg&quot;&gt;&lt;img src=
+&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;ornament_2016_sm.jpg&quot; alt=
+&quot;hanging star&quot; title=&quot;&quot; width=&quot;650&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;We wish you all things merry and cuddly.&lt;&#x2F;p&gt;
+
+</content>
+</entry>
+
+<entry>
+<title type="html">Some Time Shortly After Robots Destroyed The Cityâ€™s Highway System But Before They Helped Rebuild It</title>
+<category term="/personal/family" />
+<id>http://www.freeke.org/ffg/2016/12/01/destroyed_highway</id>
+<updated>2016-12-01T18:50:49Z</updated>
+<published>2016-12-01T18:50:49Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/personal/family/destroyed_highway.html" />
+<content type="html">
+
+&lt;p&gt;As they will do.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;IMG_2395.jpg&quot;&gt;&lt;img src=
+&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;IMG_2395_s.jpg&quot; alt=&quot;highway&quot; title=
+&quot;highway system&quot; width=&quot;650&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+
+</content>
+</entry>
+
+<entry>
+<title type="html">Scripting A Light Bulb</title>
+<category term="/tech/gadgets" />
+<id>http://www.freeke.org/ffg/2016/11/13/fluxbulb</id>
+<updated>2016-11-14T00:57:18Z</updated>
+<published>2016-11-14T00:57:18Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/tech/gadgets/fluxbulb.html" />
+<content type="html">
+
+&lt;p&gt;&lt;em&gt;This is adapted from an email I sent to an internal &quot;gadget
+fan&quot; mailing list at work in response to a question someone asked
+about controlling lighting electronically.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I went â€œsimpleâ€ and Iâ€™m pretty happy with it.&lt;&#x2F;p&gt;
+&lt;p&gt;I bought &lt;a href=
+&quot;https:&#x2F;&#x2F;smile.amazon.com&#x2F;gp&#x2F;product&#x2F;B00SGLKWQW&quot;&gt;this bulb&lt;&#x2F;a&gt; from
+Amazon.&lt;&#x2F;p&gt;
+&lt;p&gt;Itâ€™s made in China and sold under several different brand names,
+most commonly â€œFluxâ€ and â€œMagichome.â€&lt;&#x2F;p&gt;
+&lt;p&gt;You can get the WiFi RGBW version from Amazon (and a domestic
+seller) for ~$35.&lt;&#x2F;p&gt;
+&lt;p&gt;If you feel comfortable shopping via Alibaba (I donâ€™t) you could
+probably get it for ~$20.&lt;&#x2F;p&gt;
+&lt;p&gt;There are several client tools for interacting with them. Iâ€™ve
+used &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vikstrous&#x2F;zengge-lightcontrol&quot;&gt;one
+written in Go&lt;&#x2F;a&gt; and an (easier to work with, IMO) &lt;a href=
+&quot;https:&#x2F;&#x2F;github.com&#x2F;beville&#x2F;flux_led&quot;&gt;one written in
+Python.&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=
+&quot;https:&#x2F;&#x2F;threatpost.com&#x2F;iot-botnets-are-the-new-normal-of-ddos-attacks&#x2F;121093&#x2F;&quot;&gt;
+It doesn&#x27;t do the dumb thing&lt;&#x2F;a&gt; (UPnP on the open internet) so no,
+my light bulb isn&#x27;t helping to bring down Twitter.&lt;&#x2F;p&gt;
+&lt;p&gt;In addition, if you live in the iOS universe thereâ€™s &lt;a href=
+&quot;https:&#x2F;&#x2F;www.npmjs.com&#x2F;package&#x2F;homebridge-magichome&quot;&gt;a plugin&lt;&#x2F;a&gt;
+that makes it work with &lt;a href=
+&quot;https:&#x2F;&#x2F;github.com&#x2F;nfarina&#x2F;homebridge&quot;&gt;Homebridge&lt;&#x2F;a&gt; (and hence
+&lt;a href=&quot;https:&#x2F;&#x2F;www.apple.com&#x2F;ios&#x2F;home&#x2F;&quot;&gt;HomeKit&lt;&#x2F;a&gt;.)&lt;&#x2F;p&gt;
+&lt;p&gt;I can tell Siri to control my lights. Useless, but fun.&lt;&#x2F;p&gt;
+&lt;p&gt;More practically, I wrote a Python script that turns on the lamp
+in my sonâ€™s room in the morning and gradually eases him up with
+subtle color changes.&lt;&#x2F;p&gt;
+&lt;p&gt;It kicks off from a cron job running on a &lt;a href=
+&quot;http:&#x2F;&#x2F;www.freeke.org&#x2F;ffg&#x2F;tech&#x2F;computers&#x2F;os&#x2F;linux&#x2F;raspberry_pi_server.html&quot;&gt;
+Raspberry Pi&lt;&#x2F;a&gt;. (It doesnâ€™t have to be a Pi, of course â€” any
+Linux machine or Mac would work.)&lt;&#x2F;p&gt;
+&lt;p&gt;Iâ€™m sure it could be made to work from Windows, too, but thatâ€™s
+Somebody Elseâ€™s Problem. ðŸ˜&lt;&#x2F;p&gt;
+
+
+</content>
+</entry>
+
+<entry>
+<title type="html">The Warren Wide Web</title>
+<category term="/beauty" />
+<id>http://www.freeke.org/ffg/2016/10/04/warrenwideweb</id>
+<updated>2016-10-04T19:42:13Z</updated>
+<published>2016-10-04T19:42:13Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/beauty/warrenwideweb.html" />
+<content type="html">
+
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;the_web.jpeg&quot; alt=
+&quot;The Web&quot; title=&quot;The Web&quot; width=&quot;650&quot;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;This gal is enormous, probably almost as big across as a nickel
+(not counting the legs.) There are always flies buzzing around the
+bush below this web, so I imagine she eats very well.&lt;&#x2F;p&gt;
+&lt;p&gt;I hate flies more than spiders, who generally mind their own
+business, so Iâ€™m not going to bother her.&lt;&#x2F;p&gt;
+
+
+</content>
+</entry>
+
+<entry>
+<title type="html">Home Server Addendum</title>
+<category term="/tech/computers/os/linux" />
+<id>http://www.freeke.org/ffg/2016/09/26/raspi_zero_pihole</id>
+<updated>2016-09-26T19:44:38Z</updated>
+<published>2016-09-26T19:44:38Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/tech/computers/os/linux/raspi_zero_pihole.html" />
+<content type="html">
+
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;adam-krell.png&quot; alt=
+&quot;GkrellM Adam&quot; title=&quot;GkrellM display: adam&quot; width=&quot;140&quot; style=
+&quot;float:right;&quot;&gt;Micro Center is selling the Raspberry Pi Zero for
+99Â¢ as a loss leader. I bought one, then spent another few bucks
+for a boot disk and a USB-to-Ethernet adapter and a minimal case.
+Total investment: about $15.&lt;&#x2F;p&gt;
+&lt;p&gt;Iâ€™m using it as a &lt;a href=&quot;https:&#x2F;&#x2F;pi-hole.net&quot;&gt;Pi-Hole&lt;&#x2F;a&gt;
+machine.&lt;&#x2F;p&gt;
+</content>
+</entry>
+
+<entry>
+<title type="html">Exposed 1946 1981 2016</title>
+<category term="/entertainment/music/streamingplaylists" />
+<id>http://www.freeke.org/ffg/2016/09/16/exposed_1981</id>
+<updated>2016-09-16T21:12:02Z</updated>
+<published>2016-09-16T21:12:02Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/entertainment/music/streamingplaylists/exposed_1981.html" />
+<content type="html">
+
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;exposed_lp.jpg&quot; alt=
+&quot;Exposed album and art&quot; title=&quot;the physical-ish object&quot; width=
+&quot;600&quot;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I bought this sampler back in 1981, when I was 13 years old and
+had a paper route. It was a double vinyl LP for $2.99, which was
+quite a steal.&lt;&#x2F;p&gt;
+&lt;p&gt;In retrospect, it was a pretty much all over the place
+musically, but then, so was I.&lt;&#x2F;p&gt;
+&lt;p&gt;Someone mentioned this comp on Facebook a few months ago and I
+ended up &lt;a href=
+&quot;https:&#x2F;&#x2F;www.discogs.com&#x2F;Various-Exposed-A-Cheap-Peek-At-Todays-Provocative-New-Rock&#x2F;release&#x2F;1443301&quot;&gt;
+looking it up on Discogs&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I decided to try to see how many of the tracks I could track
+down, 35 years later, and was pleasantly amazed to find that, with
+only a little work, I was able to find that every track was legally
+streamable. (Re-assembling this on Spotify, Tidal, or other
+services is left as an exercise for the reader.)&lt;&#x2F;p&gt;
+&lt;p&gt;When you think about it, thatâ€™s pretty incredible: a compilation
+of new artists, selected specifically for their relative obscurity,
+and 35 years later &lt;em&gt;all&lt;&#x2F;em&gt; of the songs are easily available
+through the mechanisms most used by modern listeners to play music
+in their homes and on the go. What are the odds that a slate of 22
+catalog artists from 1946 would have been available in 1981?&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=
+&quot;https:&#x2F;&#x2F;itunes.apple.com&#x2F;us&#x2F;playlist&#x2F;exposed-1981&#x2F;idpl.ecae3aa0a4754cc7b0b2a2e47227e5e2?mt=1&amp;amp;app=music&quot;&gt;
+(Apple Music playlist link)&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;iframe src=
+&quot;&#x2F;&#x2F;tools.applemusic.com&#x2F;embed&#x2F;v1&#x2F;playlist&#x2F;pl.ecae3aa0a4754cc7b0b2a2e47227e5e2?country=us&quot;
+height=&quot;450px&quot; width=&quot;85%&quot; frameborder=&quot;0&quot;&gt;&lt;&#x2F;iframe&gt;
+</content>
+</entry>
+
+<entry>
+<title type="html">Labor Day Picnic 2016</title>
+<category term="/personal" />
+<id>http://www.freeke.org/ffg/2016/09/05/labor_day_2016</id>
+<updated>2016-09-06T02:48:35Z</updated>
+<published>2016-09-06T02:48:35Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/personal/labor_day_2016.html" />
+<content type="html">
+
+&lt;p&gt;
+  Burgers were roasted, corn was eaten, little boys played with
+  bubbles.
+&lt;&#x2F;p&gt;
+&lt;p&gt;
+  &lt;a href=&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;IMG_2302.jpg&quot;&gt;&lt;img src=
+  &quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;IMG_2302_144dpi.jpg&quot; width=&quot;650&quot;
+  alt=&quot;Aunt Carolyn, Jacob, and Mommy&quot;&gt;&lt;&#x2F;a&gt;&lt;br&gt;
+  &lt;i&gt;Aunt Carolyn, Jacob, and Mommy.&lt;&#x2F;i&gt;
+&lt;&#x2F;p&gt;
+&lt;p&gt;
+  &lt;a href=&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;IMG_0391.jpg&quot;&gt;&lt;img src=
+  &quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;IMG_0391_144dpi.jpg&quot; alt=
+  &quot;Jake with bubbles&quot; width=&quot;650&quot;&gt;&lt;&#x2F;a&gt;
+&lt;&#x2F;p&gt;
+
+</content>
+</entry>
+
+<entry>
+<title type="html">Garden Tomatoes</title>
+<category term="/entertainment/foodanddrink" />
+<id>http://www.freeke.org/ffg/2016/08/15/tomatoes</id>
+<updated>2016-08-15T19:59:36Z</updated>
+<published>2016-08-15T19:59:36Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/entertainment/foodanddrink/tomatoes.html" />
+<content type="html">
+
+&lt;p&gt;Weâ€™ve got a ton of them, and more every day. Better make some
+homemade spaghetti sauce or something.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;tomatoes.jpg&quot;
+     width=&quot;650&quot;
+     alt=&quot;Fresh tomatoes&quot;&gt;&lt;&#x2F;p&gt;
+
+</content>
+</entry>
+
+<entry>
+<title type="html">A Home Server in 2016</title>
+<category term="/tech/computers/os/linux" />
+<id>http://www.freeke.org/ffg/2016/08/10/raspberry_pi_server</id>
+<updated>2016-08-10T22:25:45Z</updated>
+<published>2016-08-10T22:25:45Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/tech/computers/os/linux/raspberry_pi_server.html" />
+<content type="html">
+
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;raspi_krell.png&quot;
+     align=&quot;right&quot;
+     alt=&quot;gkrellm display for raspberry pi&quot;
+     width=&quot;122&quot;&gt;Over the years, Iâ€™ve had various boxes around the
+     house that you could consider a home server. Often, these were
+     just my desktop machine doing double duty. Occasionally,
+     theyâ€™d be some old semi-retired tower machine shoved under a
+     spare table, gobbling frightening amounts of electricity with
+     spinning drives and cooling fans making way too much
+     noise.&lt;&#x2F;p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;raspi.jpg&quot;
+     width=&quot;650&quot;
+     alt=&quot;Raspberry Pi 3 in a pretty box&quot;
+     title=&quot;Raspberry Pi 3 in a pretty box&quot;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Itâ€™s really funny to think that this ~$50 guy is really just as
+powerful as the &amp;gt;$100,000 â€œmedium ironâ€ HP-UX box I was
+sysadmining barely more than a decade and a half ago.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=
+&quot;http:&#x2F;&#x2F;www.hpmuseum.net&#x2F;display_item.php?hw=1083&quot;&gt;&lt;img src=
+&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;A1884A.JPG&quot;
+     alt=&quot;HP 9000 &#x2F; 800 Series&quot;
+     width=&quot;500&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;These handled the typical home server tasks: holding photos,
+music, backups, whatever. Serving media inside the house. For many
+years, this very weblog lived on home servers. With the advent of
+ubiquitous cloud storage, Iâ€™ve outsourced most of these tasks.&lt;&#x2F;p&gt;
+&lt;p&gt;Itâ€™s still useful to keep some of these things within the home
+network. What doesnâ€™t really make sense anymore is devoting floor
+space and lots of watts to some ugly, oversized tower.&lt;&#x2F;p&gt;
+&lt;p&gt;Earlier this year I finally bought my first &lt;a href=
+&quot;https:&#x2F;&#x2F;www.raspberrypi.org&quot;&gt;Raspberry Pi&lt;&#x2F;a&gt; system. Theyâ€™re
+basically teeny tiny Unix boxes (roughly the size of a pack of
+cigarettes) for hobbyists. They basically pack a smartphone-level
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;System_on_a_chip&quot;&gt;SoC&lt;&#x2F;a&gt; on
+a small board that can be deployed with minimal fanfare for all
+sorts of applications.&lt;&#x2F;p&gt;
+
+</content>
+</entry>
+
+<entry>
+<title type="html">Science!</title>
+<category term="/personal/family" />
+<id>http://www.freeke.org/ffg/2016/07/26/jake_michigan_science_center</id>
+<updated>2016-07-26T15:49:38Z</updated>
+<published>2016-07-26T15:49:38Z</published>
+<link rel="alternate" type="text/html" href="http://www.freeke.org/ffg/personal/family/jake_michigan_science_center.html" />
+<content type="html">
+
+&lt;p&gt;
+  &lt;img src=&quot;https:&#x2F;&#x2F;www.freeke.org&#x2F;i&#x2F;2016&#x2F;science.jpg&quot;
+     width=&quot;650&quot;
+     alt=&quot;Jacob @ Michigan Science Center&quot;
+     title=&quot;Jacob @ Michigan Science Center&quot;&gt;
+&lt;&#x2F;p&gt;
+
+</content>
+</entry>
+</feed>

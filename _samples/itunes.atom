@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:im="https://rss.itunes.apple.com" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://rss.itunes.apple.com/api/v1/us/apple-music/hot-tracks/all/10/explicit.atom</id>
+  <title>iTunes Store : Hot Tracks</title>
+  <updated>2018-03-06T02:18:02-08:00</updated>
+  <link href="https://rss.itunes.apple.com/api/v1/us/apple-music/hot-tracks/all/10/explicit.atom" rel="self"/>
+  <link href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewRoom?fcId=978247996&amp;app=music" type="text/html" rel="alternate"/>
+  <icon>http://itunes.apple.com/favicon.ico</icon>
+  <author>
+    <name>iTunes Store</name>
+    <uri>http://wwww.apple.com/us/itunes/</uri>
+  </author>
+  <rights>Copyright © 2018 Apple Inc. Todos los derechos reservados.</rights>
+  <entry>
+    <updated>2018-03-06T02:18:02-08:00</updated>
+    <id im:id="1355644460">https://itunes.apple.com/us/album/til-its-over/1355644175?i=1355644460&amp;app=music</id>
+    <title>'Til It's Over - Anderson .Paak</title>
+    <im:artist>Anderson .Paak</im:artist>
+    <im:contentType term="song" label="song"/>
+    <im:name>'Til It's Over</im:name>
+    <category im:id="15" term="R&amp;B/Soul" scheme="https://itunes.apple.com/us/genre/id15" label="R&amp;B/Soul"/>
+    <category im:id="34" term="Music" scheme="https://itunes.apple.com/us/genre/id34" label="Music"/>
+    <im:image>http://is3.mzstatic.com/image/thumb/Music118/v4/ae/05/06/ae05066b-2228-f941-4acf-10ed5b4e6697/source/200x200bb.png</im:image>
+    <im:releaseDate>2018-03-06</im:releaseDate>
+    <link href="https://itunes.apple.com/us/album/til-its-over/1355644175?i=1355644460&amp;app=music" type="text/html" rel="alternate"/>
+    <rights>℗ 2018 OBE, LLC.</rights>
+    <content type="html">&lt;table border="0" width="100%"&gt; &lt;tr&gt; &lt;td&gt; &lt;table border="0" width="100%" cellspacing="0" cellpadding="0"&gt; &lt;tr valign="top" align="left"&gt;&lt;td align="center" width="166" valign="top"&gt;&lt;a href="https://itunes.apple.com/us/album/til-its-over/1355644175?i=1355644460&amp;app=music"&gt;&lt;img border="0" alt="Anderson .Paak - 'Til It's Over artwork" src="http://is3.mzstatic.com/image/thumb/Music118/v4/ae/05/06/ae05066b-2228-f941-4acf-10ed5b4e6697/source/200x200bb.png" /&gt;&lt;/a&gt; &lt;/td&gt;&lt;td width="10"&gt;&lt;img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /&gt;&lt;/td&gt;&lt;td width="95%"&gt;&lt;b&gt;&lt;a href="https://itunes.apple.com/us/album/til-its-over/1355644175?i=1355644460&amp;app=music"&gt;'Til It's Over&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/album/til-its-over/1355644175?i=1355644460&amp;app=music&gt;'Til It's Over - Single&lt;/a&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/artist/anderson-paak/855484536?app=music"&gt;Anderson .Paak&lt;/a&gt;&lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &lt;br/&gt;&lt;b&gt;Genre:&lt;/b&gt; &lt;a href="https://itunes.apple.com/us/genre/id15"&gt;R&amp;B/Soul&lt;/a&gt;&lt;a href="https://itunes.apple.com/us/genre/id34"&gt;Music&lt;/a&gt; &lt;br/&gt;&lt;b&gt;Release Date: &lt;/b&gt;2018-03-06&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &lt;/td&gt; &lt;/tr&gt;&lt;tr&gt; &lt;td&gt; &lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &amp;#169; ℗ 2018 OBE, LLC.&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content>
+  </entry>
+  <entry>
+    <updated>2018-03-06T02:18:02-08:00</updated>
+    <id im:id="1354068488">https://itunes.apple.com/us/album/everyday/1354068481?i=1354068488&amp;app=music</id>
+    <title>Everyday - Logic &amp; Marshmello</title>
+    <im:artist>Logic &amp; Marshmello</im:artist>
+    <im:contentType term="song" label="song"/>
+    <im:name>Everyday</im:name>
+    <category im:id="18" term="Hip-Hop/Rap" scheme="https://itunes.apple.com/us/genre/id18" label="Hip-Hop/Rap"/>
+    <category im:id="34" term="Music" scheme="https://itunes.apple.com/us/genre/id34" label="Music"/>
+    <im:image>http://is2.mzstatic.com/image/thumb/Music118/v4/de/be/2a/debe2a6d-fbe3-b8ec-2ee1-202c409ca581/source/200x200bb.png</im:image>
+    <im:releaseDate>2018-03-02</im:releaseDate>
+    <link href="https://itunes.apple.com/us/album/everyday/1354068481?i=1354068488&amp;app=music" type="text/html" rel="alternate"/>
+    <rights>℗ 2018 Def Jam Recordings, a division of UMG Recordings, Inc.</rights>
+    <content type="html">&lt;table border="0" width="100%"&gt; &lt;tr&gt; &lt;td&gt; &lt;table border="0" width="100%" cellspacing="0" cellpadding="0"&gt; &lt;tr valign="top" align="left"&gt;&lt;td align="center" width="166" valign="top"&gt;&lt;a href="https://itunes.apple.com/us/album/everyday/1354068481?i=1354068488&amp;app=music"&gt;&lt;img border="0" alt="Logic &amp; Marshmello - Everyday artwork" src="http://is2.mzstatic.com/image/thumb/Music118/v4/de/be/2a/debe2a6d-fbe3-b8ec-2ee1-202c409ca581/source/200x200bb.png" /&gt;&lt;/a&gt; &lt;/td&gt;&lt;td width="10"&gt;&lt;img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /&gt;&lt;/td&gt;&lt;td width="95%"&gt;&lt;b&gt;&lt;a href="https://itunes.apple.com/us/album/everyday/1354068481?i=1354068488&amp;app=music"&gt;Everyday&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/album/everyday/1354068481?i=1354068488&amp;app=music&gt;Everyday - Single&lt;/a&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewCollaboration?cc=us&amp;ids=30865945-980795202&amp;app=music"&gt;Logic &amp; Marshmello&lt;/a&gt;&lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &lt;br/&gt;&lt;b&gt;Genre:&lt;/b&gt; &lt;a href="https://itunes.apple.com/us/genre/id18"&gt;Hip-Hop/Rap&lt;/a&gt;&lt;a href="https://itunes.apple.com/us/genre/id34"&gt;Music&lt;/a&gt; &lt;br/&gt;&lt;b&gt;Release Date: &lt;/b&gt;2018-03-02&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &lt;/td&gt; &lt;/tr&gt;&lt;tr&gt; &lt;td&gt; &lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &amp;#169; ℗ 2018 Def Jam Recordings, a division of UMG Recordings, Inc.&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content>
+  </entry>
+  <entry>
+    <updated>2018-03-06T02:18:02-08:00</updated>
+    <id im:id="1351991983">https://itunes.apple.com/us/album/no-excuses/1351991579?i=1351991983&amp;app=music</id>
+    <title>No Excuses - Meghan Trainor</title>
+    <im:artist>Meghan Trainor</im:artist>
+    <im:contentType term="song" label="song"/>
+    <im:name>No Excuses</im:name>
+    <category im:id="14" term="Pop" scheme="https://itunes.apple.com/us/genre/id14" label="Pop"/>
+    <category im:id="34" term="Music" scheme="https://itunes.apple.com/us/genre/id34" label="Music"/>
+    <im:image>http://is2.mzstatic.com/image/thumb/Music118/v4/4c/82/c9/4c82c9e8-d5a0-7ace-b9fe-daa88a62ff12/source/200x200bb.png</im:image>
+    <im:releaseDate>2018-03-01</im:releaseDate>
+    <link href="https://itunes.apple.com/us/album/no-excuses/1351991579?i=1351991983&amp;app=music" type="text/html" rel="alternate"/>
+    <rights>℗ 2018 Epic Records, a division of Sony Music Entertainment</rights>
+    <content type="html">&lt;table border="0" width="100%"&gt; &lt;tr&gt; &lt;td&gt; &lt;table border="0" width="100%" cellspacing="0" cellpadding="0"&gt; &lt;tr valign="top" align="left"&gt;&lt;td align="center" width="166" valign="top"&gt;&lt;a href="https://itunes.apple.com/us/album/no-excuses/1351991579?i=1351991983&amp;app=music"&gt;&lt;img border="0" alt="Meghan Trainor - No Excuses artwork" src="http://is2.mzstatic.com/image/thumb/Music118/v4/4c/82/c9/4c82c9e8-d5a0-7ace-b9fe-daa88a62ff12/source/200x200bb.png" /&gt;&lt;/a&gt; &lt;/td&gt;&lt;td width="10"&gt;&lt;img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /&gt;&lt;/td&gt;&lt;td width="95%"&gt;&lt;b&gt;&lt;a href="https://itunes.apple.com/us/album/no-excuses/1351991579?i=1351991983&amp;app=music"&gt;No Excuses&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/album/no-excuses/1351991579?i=1351991983&amp;app=music&gt;No Excuses - Single&lt;/a&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/artist/meghan-trainor/348580754?app=music"&gt;Meghan Trainor&lt;/a&gt;&lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &lt;br/&gt;&lt;b&gt;Genre:&lt;/b&gt; &lt;a href="https://itunes.apple.com/us/genre/id14"&gt;Pop&lt;/a&gt;&lt;a href="https://itunes.apple.com/us/genre/id34"&gt;Music&lt;/a&gt; &lt;br/&gt;&lt;b&gt;Release Date: &lt;/b&gt;2018-03-01&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &lt;/td&gt; &lt;/tr&gt;&lt;tr&gt; &lt;td&gt; &lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &amp;#169; ℗ 2018 Epic Records, a division of Sony Music Entertainment&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content>
+  </entry>
+  <entry>
+    <updated>2018-03-06T02:18:02-08:00</updated>
+    <id im:id="1354722917">https://itunes.apple.com/us/album/top-off-feat-jay-z-future-beyonc%C3%A9/1354722100?i=1354722917&amp;app=music</id>
+    <title>Top Off (feat. JAY Z, Future &amp; Beyoncé) - DJ Khaled</title>
+    <im:artist>DJ Khaled</im:artist>
+    <im:contentType term="song" label="song"/>
+    <im:name>Top Off (feat. JAY Z, Future &amp; Beyoncé)</im:name>
+    <category im:id="18" term="Hip-Hop/Rap" scheme="https://itunes.apple.com/us/genre/id18" label="Hip-Hop/Rap"/>
+    <category im:id="34" term="Music" scheme="https://itunes.apple.com/us/genre/id34" label="Music"/>
+    <im:image>http://is5.mzstatic.com/image/thumb/Music128/v4/a1/26/6b/a1266b55-ff5a-a2a9-b605-a868ab01cd8f/source/200x200bb.png</im:image>
+    <im:releaseDate>2018-03-02</im:releaseDate>
+    <link href="https://itunes.apple.com/us/album/top-off-feat-jay-z-future-beyonc%C3%A9/1354722100?i=1354722917&amp;app=music" type="text/html" rel="alternate"/>
+    <rights>℗ 2018 Epic Records, a division of Sony Music Entertainment</rights>
+    <content type="html">&lt;table border="0" width="100%"&gt; &lt;tr&gt; &lt;td&gt; &lt;table border="0" width="100%" cellspacing="0" cellpadding="0"&gt; &lt;tr valign="top" align="left"&gt;&lt;td align="center" width="166" valign="top"&gt;&lt;a href="https://itunes.apple.com/us/album/top-off-feat-jay-z-future-beyonc%C3%A9/1354722100?i=1354722917&amp;app=music"&gt;&lt;img border="0" alt="DJ Khaled - Top Off (feat. JAY Z, Future &amp; Beyoncé) artwork" src="http://is5.mzstatic.com/image/thumb/Music128/v4/a1/26/6b/a1266b55-ff5a-a2a9-b605-a868ab01cd8f/source/200x200bb.png" /&gt;&lt;/a&gt; &lt;/td&gt;&lt;td width="10"&gt;&lt;img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /&gt;&lt;/td&gt;&lt;td width="95%"&gt;&lt;b&gt;&lt;a href="https://itunes.apple.com/us/album/top-off-feat-jay-z-future-beyonc%C3%A9/1354722100?i=1354722917&amp;app=music"&gt;Top Off (feat. JAY Z, Future &amp; Beyoncé)&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/album/top-off-feat-jay-z-future-beyonc%C3%A9/1354722100?i=1354722917&amp;app=music&gt;Top Off (feat. JAY Z, Future &amp; Beyoncé) - Single&lt;/a&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/artist/dj-khaled/157749142?app=music"&gt;DJ Khaled&lt;/a&gt;&lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &lt;br/&gt;&lt;b&gt;Genre:&lt;/b&gt; &lt;a href="https://itunes.apple.com/us/genre/id18"&gt;Hip-Hop/Rap&lt;/a&gt;&lt;a href="https://itunes.apple.com/us/genre/id34"&gt;Music&lt;/a&gt; &lt;br/&gt;&lt;b&gt;Release Date: &lt;/b&gt;2018-03-02&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &lt;/td&gt; &lt;/tr&gt;&lt;tr&gt; &lt;td&gt; &lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &amp;#169; ℗ 2018 Epic Records, a division of Sony Music Entertainment&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content>
+  </entry>
+  <entry>
+    <updated>2018-03-06T02:18:02-08:00</updated>
+    <id im:id="1353797833">https://itunes.apple.com/us/album/solitaire-feat-migos-lil-yachty/1353797666?i=1353797833&amp;app=music</id>
+    <title>Solitaire (feat. Migos &amp; Lil Yachty) - Gucci Mane</title>
+    <im:artist>Gucci Mane</im:artist>
+    <im:contentType term="song" label="song"/>
+    <im:name>Solitaire (feat. Migos &amp; Lil Yachty)</im:name>
+    <category im:id="18" term="Hip-Hop/Rap" scheme="https://itunes.apple.com/us/genre/id18" label="Hip-Hop/Rap"/>
+    <category im:id="34" term="Music" scheme="https://itunes.apple.com/us/genre/id34" label="Music"/>
+    <im:image>http://is5.mzstatic.com/image/thumb/Music128/v4/02/f9/c9/02f9c9b5-1965-7eff-f7fe-76d336cbb01c/source/200x200bb.png</im:image>
+    <im:releaseDate>2018-03-02</im:releaseDate>
+    <link href="https://itunes.apple.com/us/album/solitaire-feat-migos-lil-yachty/1353797666?i=1353797833&amp;app=music" type="text/html" rel="alternate"/>
+    <rights>℗ 2018 Atlantic Recording Corporation for the United States and WEA International Inc. for the world outside of the United States. A Warner Music Group Company</rights>
+    <content type="html">&lt;table border="0" width="100%"&gt; &lt;tr&gt; &lt;td&gt; &lt;table border="0" width="100%" cellspacing="0" cellpadding="0"&gt; &lt;tr valign="top" align="left"&gt;&lt;td align="center" width="166" valign="top"&gt;&lt;a href="https://itunes.apple.com/us/album/solitaire-feat-migos-lil-yachty/1353797666?i=1353797833&amp;app=music"&gt;&lt;img border="0" alt="Gucci Mane - Solitaire (feat. Migos &amp; Lil Yachty) artwork" src="http://is5.mzstatic.com/image/thumb/Music128/v4/02/f9/c9/02f9c9b5-1965-7eff-f7fe-76d336cbb01c/source/200x200bb.png" /&gt;&lt;/a&gt; &lt;/td&gt;&lt;td width="10"&gt;&lt;img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /&gt;&lt;/td&gt;&lt;td width="95%"&gt;&lt;b&gt;&lt;a href="https://itunes.apple.com/us/album/solitaire-feat-migos-lil-yachty/1353797666?i=1353797833&amp;app=music"&gt;Solitaire (feat. Migos &amp; Lil Yachty)&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/album/solitaire-feat-migos-lil-yachty/1353797666?i=1353797833&amp;app=music&gt;Solitaire (feat. Migos &amp; Lil Yachty) - Single&lt;/a&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/artist/gucci-mane/62374520?app=music"&gt;Gucci Mane&lt;/a&gt;&lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &lt;br/&gt;&lt;b&gt;Genre:&lt;/b&gt; &lt;a href="https://itunes.apple.com/us/genre/id18"&gt;Hip-Hop/Rap&lt;/a&gt;&lt;a href="https://itunes.apple.com/us/genre/id34"&gt;Music&lt;/a&gt; &lt;br/&gt;&lt;b&gt;Release Date: &lt;/b&gt;2018-03-02&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &lt;/td&gt; &lt;/tr&gt;&lt;tr&gt; &lt;td&gt; &lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &amp;#169; ℗ 2018 Atlantic Recording Corporation for the United States and WEA International Inc. for the world outside of the United States. A Warner Music Group Company&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content>
+  </entry>
+  <entry>
+    <updated>2018-03-06T02:18:02-08:00</updated>
+    <id im:id="1352043041">https://itunes.apple.com/us/album/powerglide-feat-juicy-j/1352042550?i=1352043041&amp;app=music</id>
+    <title>Powerglide (feat. Juicy J) - Rae Sremmurd, Swae Lee &amp; Slim Jxmmi</title>
+    <im:artist>Rae Sremmurd, Swae Lee &amp; Slim Jxmmi</im:artist>
+    <im:contentType term="song" label="song"/>
+    <im:name>Powerglide (feat. Juicy J)</im:name>
+    <category im:id="18" term="Hip-Hop/Rap" scheme="https://itunes.apple.com/us/genre/id18" label="Hip-Hop/Rap"/>
+    <category im:id="34" term="Music" scheme="https://itunes.apple.com/us/genre/id34" label="Music"/>
+    <im:image>http://is5.mzstatic.com/image/thumb/Music128/v4/5b/51/72/5b51720b-d0ad-3eb9-69e1-d515eafac6f8/source/200x200bb.png</im:image>
+    <im:releaseDate>2018-03-01</im:releaseDate>
+    <link href="https://itunes.apple.com/us/album/powerglide-feat-juicy-j/1352042550?i=1352043041&amp;app=music" type="text/html" rel="alternate"/>
+    <rights>℗ 2018 Eardruma Records/Interscope Records</rights>
+    <content type="html">&lt;table border="0" width="100%"&gt; &lt;tr&gt; &lt;td&gt; &lt;table border="0" width="100%" cellspacing="0" cellpadding="0"&gt; &lt;tr valign="top" align="left"&gt;&lt;td align="center" width="166" valign="top"&gt;&lt;a href="https://itunes.apple.com/us/album/powerglide-feat-juicy-j/1352042550?i=1352043041&amp;app=music"&gt;&lt;img border="0" alt="Rae Sremmurd, Swae Lee &amp; Slim Jxmmi - Powerglide (feat. Juicy J) artwork" src="http://is5.mzstatic.com/image/thumb/Music128/v4/5b/51/72/5b51720b-d0ad-3eb9-69e1-d515eafac6f8/source/200x200bb.png" /&gt;&lt;/a&gt; &lt;/td&gt;&lt;td width="10"&gt;&lt;img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /&gt;&lt;/td&gt;&lt;td width="95%"&gt;&lt;b&gt;&lt;a href="https://itunes.apple.com/us/album/powerglide-feat-juicy-j/1352042550?i=1352043041&amp;app=music"&gt;Powerglide (feat. Juicy J)&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/album/powerglide-feat-juicy-j/1352042550?i=1352043041&amp;app=music&gt;Powerglide (feat. Juicy J) - Single&lt;/a&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewCollaboration?cc=us&amp;ids=829356035-922547500-951608746&amp;app=music"&gt;Rae Sremmurd, Swae Lee &amp; Slim Jxmmi&lt;/a&gt;&lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &lt;br/&gt;&lt;b&gt;Genre:&lt;/b&gt; &lt;a href="https://itunes.apple.com/us/genre/id18"&gt;Hip-Hop/Rap&lt;/a&gt;&lt;a href="https://itunes.apple.com/us/genre/id34"&gt;Music&lt;/a&gt; &lt;br/&gt;&lt;b&gt;Release Date: &lt;/b&gt;2018-03-01&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &lt;/td&gt; &lt;/tr&gt;&lt;tr&gt; &lt;td&gt; &lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &amp;#169; ℗ 2018 Eardruma Records/Interscope Records&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content>
+  </entry>
+  <entry>
+    <updated>2018-03-06T02:18:02-08:00</updated>
+    <id im:id="1351626129">https://itunes.apple.com/us/album/who-you-say-i-am-live/1351626128?i=1351626129&amp;app=music</id>
+    <title>Who You Say I Am (Live) - Hillsong Worship</title>
+    <im:artist>Hillsong Worship</im:artist>
+    <im:contentType term="song" label="song"/>
+    <im:name>Who You Say I Am (Live)</im:name>
+    <category im:id="22" term="Christian &amp; Gospel" scheme="https://itunes.apple.com/us/genre/id22" label="Christian &amp; Gospel"/>
+    <category im:id="34" term="Music" scheme="https://itunes.apple.com/us/genre/id34" label="Music"/>
+    <im:image>http://is5.mzstatic.com/image/thumb/Music128/v4/f4/b1/f3/f4b1f331-1ff0-008b-4cc4-adf09dbc66c9/source/200x200bb.png</im:image>
+    <im:releaseDate>2018-04-06</im:releaseDate>
+    <link href="https://itunes.apple.com/us/album/who-you-say-i-am-live/1351626128?i=1351626129&amp;app=music" type="text/html" rel="alternate"/>
+    <rights>℗ 2018 Hillsong Church T/A Hillsong Music Australia under exclusive license to Capitol Christian Music Group, Inc.</rights>
+    <content type="html">&lt;table border="0" width="100%"&gt; &lt;tr&gt; &lt;td&gt; &lt;table border="0" width="100%" cellspacing="0" cellpadding="0"&gt; &lt;tr valign="top" align="left"&gt;&lt;td align="center" width="166" valign="top"&gt;&lt;a href="https://itunes.apple.com/us/album/who-you-say-i-am-live/1351626128?i=1351626129&amp;app=music"&gt;&lt;img border="0" alt="Hillsong Worship - Who You Say I Am (Live) artwork" src="http://is5.mzstatic.com/image/thumb/Music128/v4/f4/b1/f3/f4b1f331-1ff0-008b-4cc4-adf09dbc66c9/source/200x200bb.png" /&gt;&lt;/a&gt; &lt;/td&gt;&lt;td width="10"&gt;&lt;img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /&gt;&lt;/td&gt;&lt;td width="95%"&gt;&lt;b&gt;&lt;a href="https://itunes.apple.com/us/album/who-you-say-i-am-live/1351626128?i=1351626129&amp;app=music"&gt;Who You Say I Am (Live)&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/album/who-you-say-i-am-live/1351626128?i=1351626129&amp;app=music&gt;There Is More (Live)&lt;/a&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/artist/hillsong-worship/878620224?app=music"&gt;Hillsong Worship&lt;/a&gt;&lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &lt;br/&gt;&lt;b&gt;Genre:&lt;/b&gt; &lt;a href="https://itunes.apple.com/us/genre/id22"&gt;Christian &amp; Gospel&lt;/a&gt;&lt;a href="https://itunes.apple.com/us/genre/id34"&gt;Music&lt;/a&gt; &lt;br/&gt;&lt;b&gt;Release Date: &lt;/b&gt;2018-04-06&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &lt;/td&gt; &lt;/tr&gt;&lt;tr&gt; &lt;td&gt; &lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &amp;#169; ℗ 2018 Hillsong Church T/A Hillsong Music Australia under exclusive license to Capitol Christian Music Group, Inc.&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content>
+  </entry>
+  <entry>
+    <updated>2018-03-06T02:18:02-08:00</updated>
+    <id im:id="1352592281">https://itunes.apple.com/us/album/calidad-y-cantidad/1352591737?i=1352592281&amp;app=music</id>
+    <title>Calidad Y Cantidad - La Arrolladora Banda el Limón de René Camacho</title>
+    <im:artist>La Arrolladora Banda el Limón de René Camacho</im:artist>
+    <im:contentType term="song" label="song"/>
+    <im:name>Calidad Y Cantidad</im:name>
+    <category im:id="1123" term="Música Mexicana" scheme="https://itunes.apple.com/us/genre/id1123" label="Música Mexicana"/>
+    <category im:id="34" term="Music" scheme="https://itunes.apple.com/us/genre/id34" label="Music"/>
+    <category im:id="12" term="Latino" scheme="https://itunes.apple.com/us/genre/id12" label="Latino"/>
+    <im:image>http://is4.mzstatic.com/image/thumb/Music128/v4/8b/b8/40/8bb84069-c3e3-ba04-c2cf-0aac8112552d/source/200x200bb.png</im:image>
+    <im:releaseDate>2018-03-23</im:releaseDate>
+    <link href="https://itunes.apple.com/us/album/calidad-y-cantidad/1352591737?i=1352592281&amp;app=music" type="text/html" rel="alternate"/>
+    <rights>Disa;℗2018 UMG Recordings Inc.</rights>
+    <content type="html">&lt;table border="0" width="100%"&gt; &lt;tr&gt; &lt;td&gt; &lt;table border="0" width="100%" cellspacing="0" cellpadding="0"&gt; &lt;tr valign="top" align="left"&gt;&lt;td align="center" width="166" valign="top"&gt;&lt;a href="https://itunes.apple.com/us/album/calidad-y-cantidad/1352591737?i=1352592281&amp;app=music"&gt;&lt;img border="0" alt="La Arrolladora Banda el Limón de René Camacho - Calidad Y Cantidad artwork" src="http://is4.mzstatic.com/image/thumb/Music128/v4/8b/b8/40/8bb84069-c3e3-ba04-c2cf-0aac8112552d/source/200x200bb.png" /&gt;&lt;/a&gt; &lt;/td&gt;&lt;td width="10"&gt;&lt;img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /&gt;&lt;/td&gt;&lt;td width="95%"&gt;&lt;b&gt;&lt;a href="https://itunes.apple.com/us/album/calidad-y-cantidad/1352591737?i=1352592281&amp;app=music"&gt;Calidad Y Cantidad&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/album/calidad-y-cantidad/1352591737?i=1352592281&amp;app=music&gt;Calidad Y Cantidad&lt;/a&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/artist/la-arrolladora-banda-el-lim%C3%B3n-de-ren%C3%A9-camacho/272094455?app=music"&gt;La Arrolladora Banda el Limón de René Camacho&lt;/a&gt;&lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &lt;br/&gt;&lt;b&gt;Genre:&lt;/b&gt; &lt;a href="https://itunes.apple.com/us/genre/id1123"&gt;Música Mexicana&lt;/a&gt;&lt;a href="https://itunes.apple.com/us/genre/id34"&gt;Music&lt;/a&gt;&lt;a href="https://itunes.apple.com/us/genre/id12"&gt;Latino&lt;/a&gt; &lt;br/&gt;&lt;b&gt;Release Date: &lt;/b&gt;2018-03-23&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &lt;/td&gt; &lt;/tr&gt;&lt;tr&gt; &lt;td&gt; &lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &amp;#169; Disa;℗2018 UMG Recordings Inc.&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content>
+  </entry>
+  <entry>
+    <updated>2018-03-06T02:18:02-08:00</updated>
+    <id im:id="1337775371">https://itunes.apple.com/us/album/right-left-wrong/1337775276?i=1337775371&amp;app=music</id>
+    <title>Right Left Wrong - Three Days Grace</title>
+    <im:artist>Three Days Grace</im:artist>
+    <im:contentType term="song" label="song"/>
+    <im:name>Right Left Wrong</im:name>
+    <category im:id="21" term="Rock" scheme="https://itunes.apple.com/us/genre/id21" label="Rock"/>
+    <category im:id="34" term="Music" scheme="https://itunes.apple.com/us/genre/id34" label="Music"/>
+    <im:image>http://is1.mzstatic.com/image/thumb/Music128/v4/4b/82/d7/4b82d744-dcda-9c8d-851e-9bb82e0b2d06/source/200x200bb.png</im:image>
+    <im:releaseDate>2018-03-09</im:releaseDate>
+    <link href="https://itunes.apple.com/us/album/right-left-wrong/1337775276?i=1337775371&amp;app=music" type="text/html" rel="alternate"/>
+    <rights>℗ 2018 RCA Records, a division of Sony Music Entertainment</rights>
+    <content type="html">&lt;table border="0" width="100%"&gt; &lt;tr&gt; &lt;td&gt; &lt;table border="0" width="100%" cellspacing="0" cellpadding="0"&gt; &lt;tr valign="top" align="left"&gt;&lt;td align="center" width="166" valign="top"&gt;&lt;a href="https://itunes.apple.com/us/album/right-left-wrong/1337775276?i=1337775371&amp;app=music"&gt;&lt;img border="0" alt="Three Days Grace - Right Left Wrong artwork" src="http://is1.mzstatic.com/image/thumb/Music128/v4/4b/82/d7/4b82d744-dcda-9c8d-851e-9bb82e0b2d06/source/200x200bb.png" /&gt;&lt;/a&gt; &lt;/td&gt;&lt;td width="10"&gt;&lt;img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /&gt;&lt;/td&gt;&lt;td width="95%"&gt;&lt;b&gt;&lt;a href="https://itunes.apple.com/us/album/right-left-wrong/1337775276?i=1337775371&amp;app=music"&gt;Right Left Wrong&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/album/right-left-wrong/1337775276?i=1337775371&amp;app=music&gt;Outsider&lt;/a&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/artist/three-days-grace/1973668?app=music"&gt;Three Days Grace&lt;/a&gt;&lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &lt;br/&gt;&lt;b&gt;Genre:&lt;/b&gt; &lt;a href="https://itunes.apple.com/us/genre/id21"&gt;Rock&lt;/a&gt;&lt;a href="https://itunes.apple.com/us/genre/id34"&gt;Music&lt;/a&gt; &lt;br/&gt;&lt;b&gt;Release Date: &lt;/b&gt;2018-03-09&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &lt;/td&gt; &lt;/tr&gt;&lt;tr&gt; &lt;td&gt; &lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &amp;#169; ℗ 2018 RCA Records, a division of Sony Music Entertainment&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content>
+  </entry>
+  <entry>
+    <updated>2018-03-06T02:18:02-08:00</updated>
+    <id im:id="1352019179">https://itunes.apple.com/us/album/hurt-to-look-feat-rae-sremmurd/1352019172?i=1352019179&amp;app=music</id>
+    <title>Hurt to Look (feat. Rae Sremmurd) - Swae Lee</title>
+    <im:artist>Swae Lee</im:artist>
+    <im:contentType term="song" label="song"/>
+    <im:name>Hurt to Look (feat. Rae Sremmurd)</im:name>
+    <category im:id="15" term="R&amp;B/Soul" scheme="https://itunes.apple.com/us/genre/id15" label="R&amp;B/Soul"/>
+    <category im:id="34" term="Music" scheme="https://itunes.apple.com/us/genre/id34" label="Music"/>
+    <im:image>http://is5.mzstatic.com/image/thumb/Music128/v4/30/62/24/30622410-0e99-2bdb-0a4b-76cf8bb3fffc/source/200x200bb.png</im:image>
+    <im:releaseDate>2018-03-01</im:releaseDate>
+    <link href="https://itunes.apple.com/us/album/hurt-to-look-feat-rae-sremmurd/1352019172?i=1352019179&amp;app=music" type="text/html" rel="alternate"/>
+    <rights>℗ 2018 Eardruma Records/Interscope Records</rights>
+    <content type="html">&lt;table border="0" width="100%"&gt; &lt;tr&gt; &lt;td&gt; &lt;table border="0" width="100%" cellspacing="0" cellpadding="0"&gt; &lt;tr valign="top" align="left"&gt;&lt;td align="center" width="166" valign="top"&gt;&lt;a href="https://itunes.apple.com/us/album/hurt-to-look-feat-rae-sremmurd/1352019172?i=1352019179&amp;app=music"&gt;&lt;img border="0" alt="Swae Lee - Hurt to Look (feat. Rae Sremmurd) artwork" src="http://is5.mzstatic.com/image/thumb/Music128/v4/30/62/24/30622410-0e99-2bdb-0a4b-76cf8bb3fffc/source/200x200bb.png" /&gt;&lt;/a&gt; &lt;/td&gt;&lt;td width="10"&gt;&lt;img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /&gt;&lt;/td&gt;&lt;td width="95%"&gt;&lt;b&gt;&lt;a href="https://itunes.apple.com/us/album/hurt-to-look-feat-rae-sremmurd/1352019172?i=1352019179&amp;app=music"&gt;Hurt to Look (feat. Rae Sremmurd)&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/album/hurt-to-look-feat-rae-sremmurd/1352019172?i=1352019179&amp;app=music&gt;Hurt to Look (feat. Rae Sremmurd) - Single&lt;/a&gt;&lt;br/&gt;&lt;a href="https://itunes.apple.com/us/artist/swae-lee/922547500?app=music"&gt;Swae Lee&lt;/a&gt;&lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &lt;br/&gt;&lt;b&gt;Genre:&lt;/b&gt; &lt;a href="https://itunes.apple.com/us/genre/id15"&gt;R&amp;B/Soul&lt;/a&gt;&lt;a href="https://itunes.apple.com/us/genre/id34"&gt;Music&lt;/a&gt; &lt;br/&gt;&lt;b&gt;Release Date: &lt;/b&gt;2018-03-01&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &lt;/td&gt; &lt;/tr&gt;&lt;tr&gt; &lt;td&gt; &lt;font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"&gt; &amp;#169; ℗ 2018 Eardruma Records/Interscope Records&lt;/font&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content>
+  </entry>
+</feed>
