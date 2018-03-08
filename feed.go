@@ -9,72 +9,72 @@ import (
 	"github.com/antchfx/xmlquery"
 )
 
-// SyndFeed is top-level feed object, <feed> in Atom 1.0 and
+// Feed is top-level feed object, <feed> in Atom 1.0 and
 // <rss> in RSS 2.0.
-type SyndFeed struct {
-	Authors      []*SyndPerson
+type Feed struct {
+	Authors      []*Person
 	BaseURL      string
 	Categories   []string
-	Contributors []*SyndPerson
+	Contributors []*Person
 	Copyright    string
 	Namespace    map[string]string // map[namespace-prefix]namespace-url
 	Description  string
 	Generator    string
 	Id           string
 	ImageURL     string
-	Items        []*SyndItem
+	Items        []*Item
 	Language     string
 	// LastUpdatedTime is the feed was last updated time.
 	LastUpdatedTime   time.Time
 	Title             string
-	Links             []*SyndLink
+	Links             []*Link
 	Version           string
-	ElementExtensions []*SyndElementExtension
+	ElementExtensions []*ElementExtension
 }
 
-// SyndLink represents a link within a syndication
+// Link represents a link within a syndication
 // feed or item.
-type SyndLink struct {
+type Link struct {
 	MediaType string
 	URL       string
 	Title     string
 	RelType   string
 }
 
-// SyndItem is a feed item.
-type SyndItem struct {
+// Item is a feed item.
+type Item struct {
 	BaseURL      string
-	Authors      []*SyndPerson
-	Contributors []*SyndPerson
+	Authors      []*Person
+	Contributors []*Person
 	Categories   []string
 	Content      string
 	Copyright    string
 	Id           string
 	// LastUpdatedTime is the feed item last updated time.
 	LastUpdatedTime time.Time
-	Links           []*SyndLink
+	Links           []*Link
 	// PublishDate is the feed item publish date.
 	PublishDate       time.Time
 	Summary           string
 	Title             string
-	ElementExtensions []*SyndElementExtension
+	ElementExtensions []*ElementExtension
 	//CommentURL      string
 }
 
-// SyndPerson is an author or contributor of the feed content.
-type SyndPerson struct {
+// Person is an author or contributor of the feed content.
+type Person struct {
 	Name  string
 	URL   string
 	Email string
 }
 
-// SyndElementExtension is an syndication element extension.
-type SyndElementExtension struct {
+// ElementExtension is an syndication element extension.
+type ElementExtension struct {
 	Name, Namespace, Value string
 }
 
 // Parse parses a syndication feed(RSS,Atom).
-func Parse(r io.Reader) (*SyndFeed, error) {
+func Parse(r io.Reader) (*Feed, error) {
 	doc, err := xmlquery.Parse(r)
 	if err != nil {
 		return nil, err
@@ -88,7 +88,7 @@ func Parse(r io.Reader) (*SyndFeed, error) {
 }
 
 // LoadURL loads a syndication feed URL.
-func LoadURL(url string) (*SyndFeed, error) {
+func LoadURL(url string) (*Feed, error) {
 	res, err := http.Get(url)
 	if err != nil {
 		return nil, err

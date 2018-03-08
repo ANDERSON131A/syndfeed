@@ -12,8 +12,8 @@ import (
 // https://validator.w3.org/feed/docs/rfc4287.html
 type Atom struct{}
 
-func (a *Atom) parseItemElement(elem *xmlquery.Node, ns map[string]string) *SyndItem {
-	item := new(SyndItem)
+func (a *Atom) parseItemElement(elem *xmlquery.Node, ns map[string]string) *Item {
+	item := new(Item)
 	for elem := elem.FirstChild; elem != nil; elem = elem.NextSibling {
 		switch elem.Data {
 		case "author":
@@ -47,7 +47,7 @@ func (a *Atom) parseItemElement(elem *xmlquery.Node, ns map[string]string) *Synd
 		case "source":
 		default:
 			if ns, ok := ns[elem.Prefix]; ok {
-				item.ElementExtensions = append(item.ElementExtensions, &SyndElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
+				item.ElementExtensions = append(item.ElementExtensions, &ElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
 				if m, ok := modules[ns]; ok {
 					m.ParseElement(elem, item)
 				}
@@ -57,8 +57,8 @@ func (a *Atom) parseItemElement(elem *xmlquery.Node, ns map[string]string) *Synd
 	return item
 }
 
-func (a *Atom) parseLinkElement(elem *xmlquery.Node) *SyndLink {
-	return &SyndLink{
+func (a *Atom) parseLinkElement(elem *xmlquery.Node) *Link {
+	return &Link{
 		URL:       html.UnescapeString(elem.SelectAttr("href")),
 		Title:     elem.SelectAttr("title"),
 		MediaType: elem.SelectAttr("type"),
@@ -66,8 +66,8 @@ func (a *Atom) parseLinkElement(elem *xmlquery.Node) *SyndLink {
 	}
 }
 
-func (a *Atom) parseAuthorElement(elem *xmlquery.Node) *SyndPerson {
-	author := new(SyndPerson)
+func (a *Atom) parseAuthorElement(elem *xmlquery.Node) *Person {
+	author := new(Person)
 	if n := elem.SelectElement("name"); n != nil {
 		author.Name = n.InnerText()
 	}
@@ -80,13 +80,13 @@ func (a *Atom) parseAuthorElement(elem *xmlquery.Node) *SyndPerson {
 	return author
 }
 
-func (a *Atom) parse(doc *xmlquery.Node) (*SyndFeed, error) {
+func (a *Atom) parse(doc *xmlquery.Node) (*Feed, error) {
 	root := doc.SelectElement("feed")
 	if root == nil {
 		return nil, errors.New("invalid Atom document without feed element")
 	}
 
-	feed := &SyndFeed{Version: "1.0"} // default atom version is 1.0
+	feed := &Feed{Version: "1.0"} // default atom version is 1.0
 	feed.Namespace = make(map[string]string)
 	// xmlns:prefix = namespace
 	for _, attr := range root.Attr {
@@ -134,7 +134,7 @@ func (a *Atom) parse(doc *xmlquery.Node) (*SyndFeed, error) {
 		case "source":
 		default:
 			if ns, ok := feed.Namespace[elem.Prefix]; ok {
-				feed.ElementExtensions = append(feed.ElementExtensions, &SyndElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
+				feed.ElementExtensions = append(feed.ElementExtensions, &ElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
 				if m, ok := modules[ns]; ok {
 					m.ParseElement(elem, feed)
 				}
@@ -145,7 +145,7 @@ func (a *Atom) parse(doc *xmlquery.Node) (*SyndFeed, error) {
 }
 
 // Parse parses an atom feed.
-func (a *Atom) Parse(r io.Reader) (*SyndFeed, error) {
+func (a *Atom) Parse(r io.Reader) (*Feed, error) {
 	doc, err := xmlquery.Parse(r)
 	if err != nil {
 		return nil, err
@@ -156,6 +156,6 @@ func (a *Atom) Parse(r io.Reader) (*SyndFeed, error) {
 var atom = &Atom{}
 
 // ParseAtom parses Atom feed from the specified io.Reader r.
-func ParseAtom(r io.Reader) (*SyndFeed, error) {
+func ParseAtom(r io.Reader) (*Feed, error) {
 	return atom.Parse(r)
 }

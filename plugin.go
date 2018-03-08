@@ -21,7 +21,7 @@ func (f ModuleHandlerFunc) ParseElement(n *xmlquery.Node, v interface{}) {
 // http://web.resource.org/rss/1.0/modules/content/
 var rssContentModule = ModuleHandlerFunc(func(n *xmlquery.Node, v interface{}) {
 	if n.Data == "encoded" {
-		v.(*SyndItem).Content = n.InnerText()
+		v.(*Item).Content = n.InnerText()
 	}
 })
 
@@ -29,7 +29,7 @@ var rssContentModule = ModuleHandlerFunc(func(n *xmlquery.Node, v interface{}) {
 var rssSyndicationModule = ModuleHandlerFunc(func(n *xmlquery.Node, v interface{}) {
 	if n.Data == "updateBase" {
 		if t, err := parseDateString(n.InnerText()); err == nil {
-			v.(*SyndFeed).LastUpdatedTime = t
+			v.(*Feed).LastUpdatedTime = t
 		}
 	}
 })
@@ -37,18 +37,18 @@ var rssSyndicationModule = ModuleHandlerFunc(func(n *xmlquery.Node, v interface{
 // http://web.resource.org/rss/1.0/modules/dc/
 var rssDublinCoreModule = ModuleHandlerFunc(func(n *xmlquery.Node, v interface{}) {
 	switch v2 := v.(type) {
-	case *SyndFeed:
+	case *Feed:
 		switch n.Data {
 		case "title":
 			v2.Title = n.InnerText()
 		case "creator":
-			v2.Authors = append(v2.Authors, &SyndPerson{Name: n.InnerText()})
+			v2.Authors = append(v2.Authors, &Person{Name: n.InnerText()})
 		case "subject":
 		case "description":
 			v2.Description = n.InnerText()
 		case "publisher":
 		case "contributor":
-			v2.Contributors = append(v2.Contributors, &SyndPerson{Name: n.InnerText()})
+			v2.Contributors = append(v2.Contributors, &Person{Name: n.InnerText()})
 		case "date":
 			if t, err := parseDateString(n.InnerText()); err == nil {
 				v2.LastUpdatedTime = t
@@ -58,18 +58,18 @@ var rssDublinCoreModule = ModuleHandlerFunc(func(n *xmlquery.Node, v interface{}
 		case "rights":
 			v2.Copyright = n.InnerText()
 		}
-	case *SyndItem:
+	case *Item:
 		switch n.Data {
 		case "title":
 			v2.Title = n.InnerText()
 		case "creator":
-			v2.Authors = append(v2.Authors, &SyndPerson{Name: n.InnerText()})
+			v2.Authors = append(v2.Authors, &Person{Name: n.InnerText()})
 		case "subject":
 		case "description":
 			v2.Summary = n.InnerText()
 		case "publisher":
 		case "contributor":
-			v2.Contributors = append(v2.Contributors, &SyndPerson{Name: n.InnerText()})
+			v2.Contributors = append(v2.Contributors, &Person{Name: n.InnerText()})
 		case "date":
 			if t, err := parseDateString(n.InnerText()); err == nil {
 				v2.PublishDate = t

@@ -29,9 +29,9 @@ func TestitunesAtomFeed(t *testing.T) {
 		switch n.Data {
 		case "releaseDate":
 			t, _ := parseDateString(n.InnerText())
-			v.(*SyndItem).PublishDate = t
+			v.(*Item).PublishDate = t
 		case "artist":
-			v.(*SyndItem).Authors = append(v.(*SyndItem).Authors, &SyndPerson{Name: n.InnerText()})
+			v.(*Item).Authors = append(v.(*Item).Authors, &Person{Name: n.InnerText()})
 		case "image":
 		}
 	})

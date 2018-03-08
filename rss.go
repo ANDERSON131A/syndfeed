@@ -12,18 +12,18 @@ import (
 // https://validator.w3.org/feed/docs/rss2.html
 type RSS struct{}
 
-func (s *RSS) parseItemElement(self *xmlquery.Node, ns map[string]string) *SyndItem {
-	item := new(SyndItem)
+func (s *RSS) parseItemElement(self *xmlquery.Node, ns map[string]string) *Item {
+	item := new(Item)
 	for elem := self.FirstChild; elem != nil; elem = elem.NextSibling {
 		switch elem.Data {
 		case "title":
 			item.Title = elem.InnerText()
 		case "link":
-			item.Links = append(item.Links, &SyndLink{URL: elem.InnerText()})
+			item.Links = append(item.Links, &Link{URL: elem.InnerText()})
 		case "description":
 			item.Summary = html.UnescapeString(elem.InnerText())
 		case "author":
-			item.Authors = append(item.Authors, &SyndPerson{Name: elem.InnerText()})
+			item.Authors = append(item.Authors, &Person{Name: elem.InnerText()})
 		case "category":
 			item.Categories = append(item.Categories, elem.InnerText())
 		case "guid":
@@ -38,7 +38,7 @@ func (s *RSS) parseItemElement(self *xmlquery.Node, ns map[string]string) *SyndI
 		case "enclosure":
 		default:
 			if ns, ok := ns[elem.Prefix]; ok {
-				item.ElementExtensions = append(item.ElementExtensions, &SyndElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
+				item.ElementExtensions = append(item.ElementExtensions, &ElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
 				if m, ok := modules[ns]; ok {
 					m.ParseElement(elem, item)
 				}
@@ -48,13 +48,13 @@ func (s *RSS) parseItemElement(self *xmlquery.Node, ns map[string]string) *SyndI
 	return item
 }
 
-func (s *RSS) parse(doc *xmlquery.Node) (*SyndFeed, error) {
+func (s *RSS) parse(doc *xmlquery.Node) (*Feed, error) {
 	root := doc.SelectElement("rss")
 	if root == nil {
 		return nil, errors.New("invalid RSS document without <rss> element")
 	}
 
-	feed := new(SyndFeed)
+	feed := new(Feed)
 	// xmlns:prefix = namespace
 	feed.Namespace = make(map[string]string)
 	for _, attr := range root.Attr {
@@ -78,7 +78,7 @@ func (s *RSS) parse(doc *xmlquery.Node) (*SyndFeed, error) {
 		case "description":
 			feed.Description = elem.InnerText()
 		case "link":
-			feed.Links = append(feed.Links, &SyndLink{URL: elem.InnerText()})
+			feed.Links = append(feed.Links, &Link{URL: elem.InnerText()})
 		case "language":
 			feed.Language = elem.InnerText()
 		case "copyright":
@@ -109,7 +109,7 @@ func (s *RSS) parse(doc *xmlquery.Node) (*SyndFeed, error) {
 		default:
 			// unknown extension elements.
 			if ns, ok := feed.Namespace[elem.Prefix]; ok {
-				feed.ElementExtensions = append(feed.ElementExtensions, &SyndElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
+				feed.ElementExtensions = append(feed.ElementExtensions, &ElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
 				if m, ok := modules[ns]; ok {
 					m.ParseElement(elem, feed)
 				}
@@ -120,7 +120,7 @@ func (s *RSS) parse(doc *xmlquery.Node) (*SyndFeed, error) {
 }
 
 // Parse parses an Rss feed.
-func (s *RSS) Parse(r io.Reader) (*SyndFeed, error) {
+func (s *RSS) Parse(r io.Reader) (*Feed, error) {
 	doc, err := xmlquery.Parse(r)
 	if err != nil {
 		return nil, err
@@ -131,6 +131,6 @@ func (s *RSS) Parse(r io.Reader) (*SyndFeed, error) {
 var rss = &RSS{}
 
 // ParseRSS parses RSS feed from the specified io.Reader r.
-func ParseRSS(r io.Reader) (*SyndFeed, error) {
+func ParseRSS(r io.Reader) (*Feed, error) {
 	return rss.Parse(r)
 }
