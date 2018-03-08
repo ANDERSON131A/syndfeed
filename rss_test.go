@@ -1,10 +1,25 @@
 package syndfeed
 
 import (
+	"fmt"
 	"os"
 	"strings"
 	"testing"
 )
+
+// The following example is parse an RSS feed.
+func ExampleRSS() {
+	f, err := os.Open("./a.rss")
+	if err != nil {
+		panic(err)
+	}
+	feed, err := ParseRSS(f)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(feed.Title)
+	fmt.Println(feed.Version)
+}
 
 func TestRSSFeed(t *testing.T) {
 	f, _ := os.Open("./_samples/engadget.rss")

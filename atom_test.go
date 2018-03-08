@@ -1,11 +1,26 @@
 package syndfeed
 
 import (
+	"fmt"
 	"os"
 	"testing"
 
 	"github.com/antchfx/xmlquery"
 )
+
+// The following example is parse an Atom feed.
+func ExampleAtom() {
+	f, err := os.Open("./a.atom")
+	if err != nil {
+		panic(err)
+	}
+	feed, err := ParseAtom(f)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(feed.Title)
+	fmt.Println(feed.Version)
+}
 
 func TestAtomFeed(t *testing.T) {
 	f, _ := os.Open("./_samples/atom1.atom")
