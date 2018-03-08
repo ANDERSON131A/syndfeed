@@ -15,14 +15,14 @@ Dependencies
 Getting Started
 ===
 
-### Parse a feed from URL
+#### Parse a feed from URL
 
 ```go
 feed, _ := syndfeed.LoadURL("https://cn.engadget.com/rss.xml")
 fmt.Println(feed.Title)
 ```
 
-### Parse a feed from io.Reade
+#### Parse a feed from io.Reade
 
 ```go
 feedData := `<rss version="2.0">
@@ -34,7 +34,7 @@ feed, _ := syndfeed.Parse(strings.NewReader(feedData))
 fmt.Println(feed.Title)
 ```
 
-### Parse an Atom feed into `syndfeed.Feed`
+#### Parse an Atom feed into `syndfeed.Feed`
 
 ```go
 feedData := `<feed xmlns="http://www.w3.org/2005/Atom">
@@ -44,7 +44,7 @@ feed, _ := syndfeed.ParseAtom(strings.NewReader(feedData))
 fmt.Println(feed.Title)
 ```
 
-### Parse a RSS feed into `syndfeed.Feed`
+#### Parse a RSS feed into `syndfeed.Feed`
 
 ```go
 feedData := `<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -64,7 +64,7 @@ The `syndfeed` build-in supported following modules: [Dublin Core](http://web.re
 
 You can implement your own modules to parse any extension element like: [iTunes RSS](https://rss.itunes.apple.com/en-us), [Media RSS](http://www.rssboard.org/media-rss).
 
-### iTunes Module
+#### iTunes Module
 
 ```go
 iTunesHandler := func(n *xmlquery.Node, v interface{}) {
@@ -89,4 +89,4 @@ TODO
 
 - Add RSS/Atom format output.
 
-### Please let me know if you have any questions.
+#### Please let me know if you have any questions.
