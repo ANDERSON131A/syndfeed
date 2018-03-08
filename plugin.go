@@ -1,6 +1,10 @@
 package syndfeed
 
-import "github.com/antchfx/xmlquery"
+import (
+	"strings"
+
+	"github.com/antchfx/xmlquery"
+)
 
 // http://www.disobey.com/detergent/2002/extendingrss2/
 
@@ -80,18 +84,38 @@ var rssDublinCoreModule = ModuleHandlerFunc(func(n *xmlquery.Node, v interface{}
 	}
 })
 
-var modules = make(map[string]Module)
+type module struct {
+	ns      string // namespace URL without https:// or http:// prefix
+	handler Module
+}
+
+var modules []module
+
+func lookupModule(nsURL string) Module {
+	ns := strings.TrimPrefix(strings.TrimPrefix(nsURL, "http://"), "https://")
+	for _, m := range modules {
+		if m.ns == ns {
+			return m.handler
+		}
+	}
+	return nil
+}
 
 // RegisterExtensionModule registers Module with the specified XML namespace.
 func RegisterExtensionModule(nsURL string, m Module) {
-	modules[nsURL] = m
+	ns := strings.TrimPrefix(strings.TrimPrefix(nsURL, "http://"), "https://")
+	b := modules[:0]
+	for _, v := range modules {
+		if lookupModule(ns) == nil {
+			b = append(b, v)
+		}
+	}
+	b = append(b, module{ns, m})
+	modules = b
 }
 
 func init() {
 	RegisterExtensionModule("http://purl.org/dc/elements/1.1/", rssDublinCoreModule)
-	RegisterExtensionModule("https://purl.org/dc/elements/1.1/", rssDublinCoreModule)
 	RegisterExtensionModule("http://purl.org/rss/1.0/modules/content/", rssContentModule)
-	RegisterExtensionModule("https://purl.org/rss/1.0/modules/content/", rssContentModule)
 	RegisterExtensionModule("http://purl.org/rss/1.0/modules/syndication/", rssSyndicationModule)
-	RegisterExtensionModule("https://purl.org/rss/1.0/modules/syndication/", rssSyndicationModule)
 }

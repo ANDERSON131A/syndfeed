@@ -48,7 +48,7 @@ func (a *Atom) parseItemElement(elem *xmlquery.Node, ns map[string]string) *Item
 		default:
 			if ns, ok := ns[elem.Prefix]; ok {
 				item.ElementExtensions = append(item.ElementExtensions, &ElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
-				if m, ok := modules[ns]; ok {
+				if m := lookupModule(ns); m != nil {
 					m.ParseElement(elem, item)
 				}
 			}
@@ -135,7 +135,7 @@ func (a *Atom) parse(doc *xmlquery.Node) (*Feed, error) {
 		default:
 			if ns, ok := feed.Namespace[elem.Prefix]; ok {
 				feed.ElementExtensions = append(feed.ElementExtensions, &ElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
-				if m, ok := modules[ns]; ok {
+				if m := lookupModule(ns); m != nil {
 					m.ParseElement(elem, feed)
 				}
 			}
