@@ -15,6 +15,12 @@ type Atom struct{}
 func (a *Atom) parseItemElement(elem *xmlquery.Node, ns map[string]string) *Item {
 	item := new(Item)
 	for elem := elem.FirstChild; elem != nil; elem = elem.NextSibling {
+		if ns, ok := ns[elem.Prefix]; ok {
+			item.ElementExtensions = append(item.ElementExtensions, &ElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
+			if m := lookupModule(ns); m != nil {
+				m.ParseElement(elem, item)
+			}
+		}
 		switch elem.Data {
 		case "author":
 			item.Authors = append(item.Authors, a.parseAuthorElement(elem))
@@ -45,13 +51,6 @@ func (a *Atom) parseItemElement(elem *xmlquery.Node, ns map[string]string) *Item
 		case "content":
 			item.Content = html.UnescapeString(elem.InnerText())
 		case "source":
-		default:
-			if ns, ok := ns[elem.Prefix]; ok {
-				item.ElementExtensions = append(item.ElementExtensions, &ElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
-				if m := lookupModule(ns); m != nil {
-					m.ParseElement(elem, item)
-				}
-			}
 		}
 	}
 	return item
@@ -99,6 +98,13 @@ func (a *Atom) parse(doc *xmlquery.Node) (*Feed, error) {
 	}
 
 	for elem := root.FirstChild; elem != nil; elem = elem.NextSibling {
+		if ns, ok := feed.Namespace[elem.Prefix]; ok {
+			feed.ElementExtensions = append(feed.ElementExtensions, &ElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
+			if m := lookupModule(ns); m != nil {
+				m.ParseElement(elem, feed)
+			}
+			continue
+		}
 		switch elem.Data {
 		case "author":
 			feed.Authors = append(feed.Authors, a.parseAuthorElement(elem))
@@ -132,13 +138,6 @@ func (a *Atom) parse(doc *xmlquery.Node) (*Feed, error) {
 		case "icon":
 		case "published":
 		case "source":
-		default:
-			if ns, ok := feed.Namespace[elem.Prefix]; ok {
-				feed.ElementExtensions = append(feed.ElementExtensions, &ElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
-				if m := lookupModule(ns); m != nil {
-					m.ParseElement(elem, feed)
-				}
-			}
 		}
 	}
 	return feed, nil

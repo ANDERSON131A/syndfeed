@@ -15,6 +15,13 @@ type RSS struct{}
 func (s *RSS) parseItemElement(self *xmlquery.Node, ns map[string]string) *Item {
 	item := new(Item)
 	for elem := self.FirstChild; elem != nil; elem = elem.NextSibling {
+		if ns, ok := ns[elem.Prefix]; ok {
+			item.ElementExtensions = append(item.ElementExtensions, &ElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
+			if m := lookupModule(ns); m != nil {
+				m.ParseElement(elem, item)
+			}
+			continue
+		}
 		switch elem.Data {
 		case "title":
 			item.Title = elem.InnerText()
@@ -36,13 +43,6 @@ func (s *RSS) parseItemElement(self *xmlquery.Node, ns map[string]string) *Item 
 			item.BaseURL = elem.SelectAttr("URL")
 		case "comments":
 		case "enclosure":
-		default:
-			if ns, ok := ns[elem.Prefix]; ok {
-				item.ElementExtensions = append(item.ElementExtensions, &ElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
-				if m := lookupModule(ns); m != nil {
-					m.ParseElement(elem, item)
-				}
-			}
 		}
 	}
 	return item
@@ -72,6 +72,13 @@ func (s *RSS) parse(doc *xmlquery.Node) (*Feed, error) {
 	}
 
 	for elem := channel.FirstChild; elem != nil; elem = elem.NextSibling {
+		if ns, ok := feed.Namespace[elem.Prefix]; ok {
+			feed.ElementExtensions = append(feed.ElementExtensions, &ElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
+			if m := lookupModule(ns); m != nil {
+				m.ParseElement(elem, feed)
+			}
+			continue
+		}
 		switch elem.Data {
 		case "title":
 			feed.Title = elem.InnerText()
@@ -106,14 +113,6 @@ func (s *RSS) parse(doc *xmlquery.Node) (*Feed, error) {
 		case "pubDate":
 		case "cloud":
 		case "ttl":
-		default:
-			// unknown extension elements.
-			if ns, ok := feed.Namespace[elem.Prefix]; ok {
-				feed.ElementExtensions = append(feed.ElementExtensions, &ElementExtension{elem.Data, elem.Prefix, elem.InnerText()})
-				if m := lookupModule(ns); m != nil {
-					m.ParseElement(elem, feed)
-				}
-			}
 		}
 	}
 	return feed, nil
