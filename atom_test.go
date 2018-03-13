@@ -39,7 +39,7 @@ func TestAtomFeed(t *testing.T) {
 	}
 }
 
-func TestitunesAtomFeed(t *testing.T) {
+func TestAppleiTunesAtomFeed(t *testing.T) {
 	itunesModule := ModuleHandlerFunc(func(n *xmlquery.Node, v interface{}) {
 		switch n.Data {
 		case "releaseDate":
@@ -65,14 +65,14 @@ func TestitunesAtomFeed(t *testing.T) {
 	if e, g := 2, len(feed.Links); e != g {
 		t.Errorf("<feed.link> count expected %d but %d", e, g)
 	}
-	if feed.ImageURL == "" {
-		t.Error("feed.ImageURL is nil")
-	}
 	entry := feed.Items[0]
-	if e, g := "Hillsong Worship", entry.Authors[0].Name; e != g {
+	if e, g := "Anderson .Paak", entry.Authors[0].Name; e != g {
 		t.Errorf("<entry.author> expected %s,but got %s", e, g)
 	}
 	if entry.Content == "" {
 		t.Error("<entry.content> is nil")
+	}
+	if entry.Id == "" {
+		t.Error("<entry.id> is nil")
 	}
 }
